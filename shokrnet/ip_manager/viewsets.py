@@ -1,16 +1,17 @@
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 
-from shokrnet.ip_manager.models import Site, Device, DeviceType, Subnet, IPAddress, VLAN, Service
-from shokrnet.ip_manager.serializers import SiteSerializer, DeviceSerializer, DeviceTypeSerializer, SubnetSerializer, \
+from shokrnet.ip_manager.models import Location, Device, DeviceType, Subnet, IPAddress, VLAN, Service
+from shokrnet.ip_manager.serializers import LocationSerializer, DeviceSerializer, DeviceTypeSerializer, \
+    SubnetSerializer, \
     IPSerializer, VLANSerializer, ServiceSerializer
 
 
-class SiteViewSet(ModelViewSet):
+class LocationViewSet(ModelViewSet):
     permission_classes = (IsAuthenticated,)
 
-    queryset = Site.objects.all()
-    serializer_class = SiteSerializer
+    queryset = Location.objects.all()
+    serializer_class = LocationSerializer
 
 
 class DeviceTypeViewSet(ModelViewSet):

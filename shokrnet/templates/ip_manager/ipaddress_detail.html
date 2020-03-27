@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <br>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div class="card" style="width: 18rem;">
+          {#                <img class="card-img-top" src="..." alt="Card image cap">#}
+          <div class="card-body">
+            <h5 class="card-title" style="color: #0A246A">{{ object.tweet|cut:"." }}</h5>
+            <hr>
+            <p class="card-text">{{ object.text }}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+
+            <li class="list-group-item">
+              <a class="btn btn-sm btn-outline-warning"
+                 href="{% url 'core:tweet-update' object.pk %}"> Edit </a>
+            </li>
+
+
+            <li class="list-group-item">Retweets: {{ object.re_tweet_count }}</li>
+            <li class="list-group-item">Favorite: {{ object.favorite_count }}</li>
+            <li class="list-group-item">Created at: {{ object.created_at|date }}</li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

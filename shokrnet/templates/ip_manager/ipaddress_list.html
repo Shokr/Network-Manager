@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Network Manager {% endblock %}
+
+{% block css %}
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <style>
+    .form-control-borderless {
+      border: none;
+    }
+
+    .form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+  </style>
+{% endblock css %}
+
+{% block content %}
+
+  <div class="container">
+    <br/>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <form class="card card-sm" action="{% url 'ip_manager:ip_search' %}" method="get">
+          <div class="card-body row no-gutters align-items-center">
+            <div class="col-auto">
+              <i class="fas fa-search h4 text-body"></i>
+            </div>
+            <!--end of col-->
+            <div class="col">
+              <input name="q" class="form-control form-control-lg form-control-borderless" type="search"
+                     placeholder="Search topics or keywords">
+            </div>
+            <!--end of col-->
+            <div class="col-auto">
+              <button class="btn btn-lg btn-success" type="submit">Search</button>
+            </div>
+            <!--end of col-->
+          </div>
+        </form>
+      </div>
+      <!--end of col-->
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <a class="btn btn-lg btn-outline-success" href="{% url 'ip_manager:add_ip' %}"> Add IP </a>
+    </div>
+  </div>
+
+  <hr>
+  <br/>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {% for tweet in object_list %}
+
+          <div class="post-preview">
+            <a href="{% url 'ip_manager:detail_ip' tweet.pk %}">
+              <h5 class="post-subtitle">
+                {{ tweet.tweet|cut:"." }}
+              </h5>
+            </a>
+
+            <h3 class="post-title">
+              {{ tweet.text }}
+            </h3>
+
+            <p class="post-meta">
+              Favorite <a href="#">{{ tweet.favorite_count }}</a>
+              Retweets <a href="#">{{ tweet.re_tweet_count }}</a>
+              on {{ tweet.created_at|date }}</p>
+          </div>
+          <hr>
+        {% empty %}
+          <li>No tweets yet.</li>
+        {% endfor %}
+
+
+        <!-- Pager -->
+        <div class="clearfix">
+          {% if is_paginated %}
+            <nav aria-label="Page navigation conatiner"></nav>
+            <ul class="pagination justify-content-center">
+              {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo;
+                  PREV </a></li>
+              {% endif %}
+              {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a>
+                </li>
+              {% endif %}
+            </ul>
+            </nav>
+            </div>
+          {% endif %}
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+{% endblock content %}

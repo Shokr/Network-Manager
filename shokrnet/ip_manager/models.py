@@ -7,7 +7,7 @@ from .constants import *
 from .validators import DNSValidator
 
 
-class Site(models.Model):
+class Location(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     address = models.TextField(blank=True, null=True)
     geolocation = models.CharField(max_length=100, blank=True, null=True)
@@ -15,16 +15,16 @@ class Site(models.Model):
     time_created = models.DateTimeField(auto_created=True, default=timezone.now, blank=True, null=True)
 
     class Meta:
-        db_table = 'sites'
+        db_table = 'Locations'
         ordering = ['name']
-        verbose_name = 'Network Site'
-        verbose_name_plural = 'Network Sites'
+        verbose_name = 'Network Location'
+        verbose_name_plural = 'Network Locations'
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('ip_manager:site', args=[self.pk])
+        return reverse('ip_manager:Location', args=[self.pk])
 
 
 class DeviceType(models.Model):
@@ -74,13 +74,24 @@ class Device(models.Model):
 
 class Subnet(models.Model):
     name = models.CharField(max_length=100, blank=True, db_index=True)
-    subnet = models.CharField(max_length=100, db_index=True, unique=True,
-                              help_text='Subnet in CIDR notation, eg: "10.0.0.0/24"  for IPv4 and '
-                                        '"fdb6:21b:a477::9f7/64" for IPv6')
+
+    subnet = models.GenericIPAddressField(unique=True, help_text='Subnet IP', verbose_name="Subnet")
+
+    mask = models.GenericIPAddressField(help_text='Subnet Mask', verbose_name="Subnet Mask")
+
     description = models.CharField(max_length=100, blank=True)
+
     master_subnet = models.ForeignKey('self', on_delete=models.CASCADE,
                                       blank=True, null=True,
                                       related_name='child_subnet_set')
+
+    vlan = models.ForeignKey(
+        to='VLAN',
+        on_delete=models.SET_NULL,
+        related_name='vlans',
+        blank=True,
+        null=True
+    )
 
     time_created = models.DateTimeField(auto_created=True, default=timezone.now, blank=True, null=True)
 
@@ -113,12 +124,12 @@ class IPAddress(models.Model):
 
     family = models.PositiveSmallIntegerField(
         choices=CHOICES,
-        editable=False
+        # editable=False
     )
 
     address = models.GenericIPAddressField(
         unique=True,
-        help_text='IPv4 or IPv6 address (with mask)'
+        help_text='IPv4 address'
     )
 
     subnet = models.ForeignKey(
@@ -231,8 +242,8 @@ class VLAN(models.Model):
         max_length=64
     )
 
-    site = models.ForeignKey(
-        to='Site',
+    location = models.ForeignKey(
+        to='Location',
         on_delete=models.PROTECT,
         related_name='vlans',
         blank=True,
@@ -261,14 +272,6 @@ class VLAN(models.Model):
         default='active'
     )
 
-    subnet = models.ForeignKey(
-        to='Subnet',
-        on_delete=models.SET_NULL,
-        related_name='subnets',
-        blank=True,
-        null=True
-    )
-
     description = models.CharField(
         max_length=100,
         blank=True
@@ -278,7 +281,7 @@ class VLAN(models.Model):
 
     class Meta:
         db_table = 'vlans'
-        ordering = ('site', 'vid', 'pk')
+        ordering = ('vid', 'pk')
 
         verbose_name = 'VLAN'
         verbose_name_plural = 'VLANs'

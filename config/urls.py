@@ -18,6 +18,8 @@ urlpatterns = [
                   path("users/", include("shokrnet.users.urls", namespace="users")),
                   path("accounts/", include("allauth.urls")),
                   # Your stuff: custom urls includes go here
+                  path("ip_manager/", include("shokrnet.ip_manager.urls", namespace="ip_manager")),
+
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # API URLS
 urlpatterns += [

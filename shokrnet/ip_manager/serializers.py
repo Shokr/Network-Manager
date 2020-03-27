@@ -3,9 +3,9 @@ from rest_framework.serializers import ModelSerializer
 from shokrnet.ip_manager.models import *
 
 
-class SiteSerializer(ModelSerializer):
+class LocationSerializer(ModelSerializer):
     class Meta:
-        model = Site
+        model = Location
         fields = '__all__'
 
 

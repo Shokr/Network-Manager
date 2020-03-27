@@ -3,9 +3,9 @@ from django import forms
 from .models import *
 
 
-class SiteForm(forms.ModelForm):
+class LocationForm(forms.ModelForm):
     class Meta:
-        model = Site
+        model = Location
         fields = '__all__'
 
 
