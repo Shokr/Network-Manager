@@ -1,0 +1,52 @@
+{% extends "admin/base.html" %}
+
+{% load static %}
+{% load i18n %}
+
+{% block extrahead %}
+  {{ block.super }}
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet"/>
+
+  <style type="text/css">
+    .footer, .app-auth, .has-children:first-of-type {
+      visibility: hidden;
+    }
+
+    #recent-actions-module {
+      visibility: hidden;
+      width: 50px
+    }
+
+    li.success {
+      visibility: hidden;
+      height: 5px
+    }
+  </style>
+
+{% endblock %}
+
+
+{% block footer %}
+  {{ block.super }}
+  {% if not media %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-KM512VNnjElC30ehFwehXjx1YCHPiQkOPmqnrWtpccM=" crossorigin="anonymous"></script>
+    <script src="{% static 'admin/js/jquery.init.js' %}"></script>
+
+  {% endif %}
+
+  <script>window.jQuery = window.$ = django.jQuery;</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      {# timeout required because filtered is added after load #}
+      setTimeout(function () {
+        $('select:not(.filtered):not(.admin-autocomplete)').select2();
+      }, 0);
+    });
+  </script>
+
+{% endblock %}
