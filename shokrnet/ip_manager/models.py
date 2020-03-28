@@ -85,7 +85,6 @@ class Subnet(models.Model):
 
     family = models.PositiveSmallIntegerField(
         choices=CHOICES,
-        editable=False
     )
 
     name = models.CharField(max_length=100, blank=True, db_index=True)
@@ -145,19 +144,18 @@ class Subnet(models.Model):
     def save(self, *args, **kwargs):
 
         self.family = ipaddress.ip_network(self.subnet).version
-        self.broadcast_address = ipaddress.ip_network(self.subnet).broadcast_address
-        self.hostmask = ipaddress.ip_network(self.subnet).hostmask
-        self.netmask = ipaddress.ip_network(self.subnet).netmask
+
+        self.broadcast_address = str(ipaddress.ip_network(self.subnet).broadcast_address)
+
+        self.hostmask = str(ipaddress.ip_network(self.subnet).hostmask)
+        self.netmask = str(ipaddress.ip_network(self.subnet).netmask)
+
         self.total_hosts = len(list(ipaddress.ip_network(self.subnet).hosts()))
 
         super().save(*args, **kwargs)
 
 
 class IPAddress(models.Model):
-    address = models.GenericIPAddressField(
-        help_text='IPv4 address'
-    )
-
     subnet = models.ForeignKey(
         to='Subnet',
         on_delete=models.PROTECT,
@@ -165,6 +163,11 @@ class IPAddress(models.Model):
         blank=True,
         null=True,
         verbose_name='Subnet'
+    )
+
+    address = models.GenericIPAddressField(
+        verbose_name='IP',
+        help_text='IP address'
     )
 
     STATUS_ACTIVE = 'active'
@@ -263,10 +266,18 @@ class IPAddress(models.Model):
         # Force dns_name to lowercase
         self.dns_name = self.dns_name.lower()
         ##############################################################################
-        self.subnet.reserved_hosts = self.objects.filter(subnet=self.subnet).count() + 2
-        self.subnet.utilization_percentage = ((self.objects.filter(subnet=self.subnet).count() + 2) / (
-            self.subnet.total_hosts)) * 100
-        ##############################################################################
+
+        sub = self.subnet
+        reserved_hosts = sub.reserved_hosts
+        sub.reserved_hosts = reserved_hosts + 1
+        sub.save()
+
+        reserved_hosts_num = sub.reserved_hosts
+        total_host = sub.total_hosts
+
+        sub.utilization_percentage = (reserved_hosts_num / total_host) * 100
+        sub.save()
+
         super().save(*args, **kwargs)
 
 
@@ -320,7 +331,7 @@ class VLAN(models.Model):
         verbose_name_plural = 'VLANs'
 
     def __str__(self):
-        return self.vid
+        return str(self.vid)
 
     def get_absolute_url(self):
         return reverse('ip_manager:vlan', args=[self.pk])

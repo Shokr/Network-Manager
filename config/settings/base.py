@@ -310,3 +310,4 @@ CORS_ORIGIN_ALLOW_ALL = True
 # ------------------------------------------------------------------------------
 
 IMPORT_EXPORT_USE_TRANSACTIONS = True
+GRAPPELLI_ADMIN_TITLE = "Shokr Network Manager"
