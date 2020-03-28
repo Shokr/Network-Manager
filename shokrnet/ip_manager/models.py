@@ -171,12 +171,14 @@ class IPAddress(models.Model):
         help_text='IP address'
     )
 
+    STATUS_FREE = 'free'
     STATUS_ACTIVE = 'active'
     STATUS_RESERVED = 'reserved'
     STATUS_DEPRECATED = 'deprecated'
     STATUS_DHCP = 'dhcp'
 
     STATUS_CHOICES = (
+        (STATUS_FREE, 'FREE'),
         (STATUS_ACTIVE, 'Active'),
         (STATUS_RESERVED, 'Reserved'),
         (STATUS_DEPRECATED, 'Deprecated'),

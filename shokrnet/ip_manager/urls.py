@@ -13,8 +13,6 @@ urlpatterns = [
     # path('delete/<int:pk>/', IPDelete.as_view(), name='delete_ip'),
     path('<int:pk>/', IPDetailView.as_view(), name='detail_ip'),
 
-    path('search/', IPSearchResultsView.as_view(), name='ip_search'),
-
     # EXPORTING
     path('locations/csv', exportLocationCSV, name='LocationCSV'),
     path('locations/json', exportLocationJSON, name='LocationJSON'),

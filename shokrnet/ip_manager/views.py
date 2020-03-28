@@ -9,12 +9,12 @@ from shokrnet.ip_manager.forms import *
 
 class IPCreate(CreateView):
     model = IPAddress
-    fields = ['address', 'subnet', 'status', 'role', 'device', 'nat_inside', 'dns_name', 'description']
+    fields = ['subnet', 'address', 'status', 'role', 'device', 'nat_inside', 'dns_name', 'description']
 
 
 class IPUpdate(UpdateView):
     model = IPAddress
-    fields = ['address', 'subnet', 'status', 'role', 'device', 'nat_inside', 'dns_name', 'description']
+    fields = ['subnet', 'address', 'status', 'role', 'device', 'nat_inside', 'dns_name', 'description']
 
 
 class IPDelete(DeleteView):
@@ -29,13 +29,3 @@ class IPDetailView(DetailView):
 class IPListView(ListView):
     model = IPAddress
     paginate_by = 50
-
-
-class IPSearchResultsView(ListView):
-    model = IPAddress
-    template_name = 'ip_manager/ip_search_results.html'
-
-    def get_queryset(self):
-        query = self.request.GET.get('q')
-        object_list = IPAddress.objects.filter(Q(address__icontains=query))
-        return object_list

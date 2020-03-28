@@ -1,4 +1,5 @@
-{% load static i18n %}<!DOCTYPE html>
+{% load static i18n %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -23,11 +24,14 @@
 
 
     <!-- Your stuff: Third-party CSS libraries go here -->
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <!-- This file stores project-specific CSS -->
 
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
 
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.16.0/bootstrap-table.min.css" rel="stylesheet">
 
   {% endblock %}
 
@@ -119,6 +123,14 @@
 
   <script src="{% static 'js/project.js' %}"></script>
 
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.16.0/bootstrap-table.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('#table').DataTable();
+    });
+  </script>
 
 {% endblock javascript %}
 </body>
