@@ -57,3 +57,5 @@ django-anymail[mailgun]==7.0.0  # https://github.com/anymail/django-anymail
 
 django-grappelli
 netaddr
+pydotplus
+django-import-export

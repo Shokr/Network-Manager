@@ -1,7 +1,5 @@
 from django.test import TestCase
 
-from ..froms import *
-
 
 class SiteFormTests(TestCase):
     def test_forms(self):

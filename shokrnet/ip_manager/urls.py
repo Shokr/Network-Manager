@@ -1,5 +1,6 @@
 from django.urls import path
 
+from shokrnet.ip_manager.export import *
 from .views import *
 
 app_name = 'ip_manager'
@@ -14,4 +15,8 @@ urlpatterns = [
 
     path('search/', IPSearchResultsView.as_view(), name='ip_search'),
 
+    # EXPORTING
+    path('locations/csv', exportLocationCSV, name='LocationCSV'),
+    path('locations/json', exportLocationJSON, name='LocationJSON'),
+    path('locations/xls', exportLocationXLS, name='LocationXLS'),
 ]

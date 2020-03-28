@@ -4,17 +4,17 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.list import ListView
 
-from shokrnet.ip_manager.froms import *
+from shokrnet.ip_manager.forms import *
 
 
 class IPCreate(CreateView):
     model = IPAddress
-    fields = ['family', 'address', 'subnet', 'status', 'role', 'device', 'nat_inside', 'dns_name', 'description']
+    fields = ['address', 'subnet', 'status', 'role', 'device', 'nat_inside', 'dns_name', 'description']
 
 
 class IPUpdate(UpdateView):
     model = IPAddress
-    fields = ['family', 'address', 'subnet', 'status', 'role', 'device', 'nat_inside', 'dns_name', 'description']
+    fields = ['address', 'subnet', 'status', 'role', 'device', 'nat_inside', 'dns_name', 'description']
 
 
 class IPDelete(DeleteView):

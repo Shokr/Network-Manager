@@ -1,3 +1,5 @@
+import ipaddress
+
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.urls import reverse
@@ -49,8 +51,8 @@ class DeviceType(models.Model):
 
 class Device(models.Model):
     name = models.CharField(max_length=64)
-    serial_number = models.CharField(max_length=100, unique=True)
-    mac = models.CharField(max_length=100, blank=True, null=True)
+    serial_number = models.CharField(max_length=100, unique=True, blank=True, null=True)
+    mac = models.CharField(max_length=100, unique=True, blank=True, null=True)
 
     device_type = models.ForeignKey(
         to='DeviceType',
@@ -73,11 +75,35 @@ class Device(models.Model):
 
 
 class Subnet(models.Model):
+    FAMILY_4 = 4
+    FAMILY_6 = 6
+
+    CHOICES = (
+        (FAMILY_4, 'IPv4'),
+        (FAMILY_6, 'IPv6'),
+    )
+
+    family = models.PositiveSmallIntegerField(
+        choices=CHOICES,
+        editable=False
+    )
+
     name = models.CharField(max_length=100, blank=True, db_index=True)
 
-    subnet = models.GenericIPAddressField(unique=True, help_text='Subnet IP', verbose_name="Subnet")
+    subnet = models.CharField(
+        max_length=250,
+        db_index=True,
+        verbose_name="Subnet",
+        unique=True,
+        help_text='Subnet in CIDR notation, eg: "10.0.0.0/24" for IPv4 and "fdb6:21b:a477::9f7/64" for IPv6')
 
-    mask = models.GenericIPAddressField(help_text='Subnet Mask', verbose_name="Subnet Mask")
+    broadcast_address = models.GenericIPAddressField(verbose_name="Broadcast IP")
+    hostmask = models.GenericIPAddressField(verbose_name="Host Mask")
+    netmask = models.GenericIPAddressField(verbose_name="Net Mask")
+
+    total_hosts = models.BigIntegerField(verbose_name="Total IPs")
+    reserved_hosts = models.BigIntegerField(verbose_name="Reserved IPs", default=2)
+    utilization_percentage = models.TextField(verbose_name="Usage (%)", blank=True, null=True)
 
     description = models.CharField(max_length=100, blank=True)
 
@@ -112,23 +138,23 @@ class Subnet(models.Model):
     def get_absolute_url(self):
         return reverse('ip_manager:subnet', args=[self.pk])
 
+    def hosts(self):
+        ip_list = list(ipaddress.ip_network(self.subnet).hosts())
+        return ip_list
+
+    def save(self, *args, **kwargs):
+
+        self.family = ipaddress.ip_network(self.subnet).version
+        self.broadcast_address = ipaddress.ip_network(self.subnet).broadcast_address
+        self.hostmask = ipaddress.ip_network(self.subnet).hostmask
+        self.netmask = ipaddress.ip_network(self.subnet).netmask
+        self.total_hosts = len(list(ipaddress.ip_network(self.subnet).hosts()))
+
+        super().save(*args, **kwargs)
+
 
 class IPAddress(models.Model):
-    FAMILY_4 = 4
-    FAMILY_6 = 6
-
-    CHOICES = (
-        (FAMILY_4, 'IPv4'),
-        (FAMILY_6, 'IPv6'),
-    )
-
-    family = models.PositiveSmallIntegerField(
-        choices=CHOICES,
-        # editable=False
-    )
-
     address = models.GenericIPAddressField(
-        unique=True,
         help_text='IPv4 address'
     )
 
@@ -156,6 +182,7 @@ class IPAddress(models.Model):
     status = models.CharField(
         max_length=50,
         choices=STATUS_CHOICES,
+        default='active',
         help_text='The operational status of this IP'
     )
 
@@ -221,9 +248,10 @@ class IPAddress(models.Model):
 
     class Meta:
         db_table = 'ips'
-        ordering = ('family', 'address', 'pk')
-        verbose_name = 'IP address'
-        verbose_name_plural = 'IP addresses'
+        ordering = ('address', 'pk')
+        unique_together = ('address', 'subnet')
+        verbose_name = 'IP'
+        verbose_name_plural = 'IPs'
 
     def __str__(self):
         return str(self.address)
@@ -234,6 +262,11 @@ class IPAddress(models.Model):
     def save(self, *args, **kwargs):
         # Force dns_name to lowercase
         self.dns_name = self.dns_name.lower()
+        ##############################################################################
+        self.subnet.reserved_hosts = self.objects.filter(subnet=self.subnet).count() + 2
+        self.subnet.utilization_percentage = ((self.objects.filter(subnet=self.subnet).count() + 2) / (
+            self.subnet.total_hosts)) * 100
+        ##############################################################################
         super().save(*args, **kwargs)
 
 

@@ -79,6 +79,7 @@ THIRD_PARTY_APPS = [
     'allauth.socialaccount.providers.twitter',
     "rest_framework",
     "rest_framework.authtoken",
+    'import_export',
 ]
 
 LOCAL_APPS = [
@@ -307,3 +308,5 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_ALLOW_ALL = True
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True
