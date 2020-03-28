@@ -166,6 +166,7 @@ class IPAddress(models.Model):
     )
 
     address = models.GenericIPAddressField(
+        unique=True,
         verbose_name='IP',
         help_text='IP address'
     )
@@ -252,7 +253,6 @@ class IPAddress(models.Model):
     class Meta:
         db_table = 'ips'
         ordering = ('address', 'pk')
-        unique_together = ('address', 'subnet')
         verbose_name = 'IP'
         verbose_name_plural = 'IPs'
 
@@ -263,20 +263,20 @@ class IPAddress(models.Model):
         return reverse('ip_manager:ipaddress', args=[self.pk])
 
     def save(self, *args, **kwargs):
-        # Force dns_name to lowercase
-        self.dns_name = self.dns_name.lower()
-        ##############################################################################
-
         sub = self.subnet
-        reserved_hosts = sub.reserved_hosts
-        sub.reserved_hosts = reserved_hosts + 1
-        sub.save()
 
-        reserved_hosts_num = sub.reserved_hosts
-        total_host = sub.total_hosts
+        if self.address != sub.broadcast_address and self.address != sub.subnet:
+            self.dns_name = self.dns_name.lower()
 
-        sub.utilization_percentage = (reserved_hosts_num / total_host) * 100
-        sub.save()
+            reserved_hosts = sub.reserved_hosts
+            sub.reserved_hosts = reserved_hosts + 1
+            sub.save()
+
+            reserved_hosts_num = sub.reserved_hosts
+            total_host = sub.total_hosts
+
+            sub.utilization_percentage = (reserved_hosts_num / total_host) * 100
+            sub.save()
 
         super().save(*args, **kwargs)
 
