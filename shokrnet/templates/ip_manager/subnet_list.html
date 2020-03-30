@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Subnet List {% endblock %}
+
+{% block content %}
+  <br/>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <a class="btn btn-lg btn-outline-success" href="{% url 'ip_manager:add_subnet' %}"> Add Subnet </a>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Main Content -->
+  <div class="container">
+
+    <table id="table" class="table table-striped table-bordered" style="width:100%"
+           data-toggle="table" data-pagination="true"
+           data-search="true" data-show-columns="true"
+           data-show-pagination-switch="true" data-show-refresh="true"
+           data-show-toggle="true"
+           data-resizable="true"
+           data-toolbar="#toolbar">
+      <thead>
+      <tr>
+        <th>Version</th>
+        <th>VLAN</th>
+        <th>Name</th>
+        <th>Subnet</th>
+        <th>Broadcast IP</th>
+        <th>Host Mask</th>
+        <th>Net Mask</th>
+        <th>Total</th>
+        <th>Reserved</th>
+        <th>Utilization(%)</th>
+        <th>Master Subnet</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+
+      <tbody>
+
+      {% for obj in objects %}
+        <tr>
+          <td> obj.family</td>
+          <td> obj.vlan</td>
+          <td> obj.name</td>
+          <td> obj.subnet</td>
+          <td> obj.broadcast_address</td>
+          <td> obj.hostmask</td>
+          <td> obj.netmask</td>
+          <td> obj.total_hosts</td>
+          <td> obj.reserved_hosts</td>
+          <td> obj.utilization_percentage</td>
+          <td> obj.master_subnet</td>
+        </tr>
+
+        <td class="datatable-ct">
+          <a href="{% url 'ip_manager:edit_subnet' obj.pk %}"><i class="fa fa-user-edit"></i></a>
+          <a href="{% url 'ip_manager:delete_subnet' obj.pk %}"><i class="fa fa-trash"></i></a>
+        </td>
+
+      {% endfor %}
+
+
+      </tbody>
+    </table>
+
+  </div>
+
+{% endblock content %}

@@ -160,8 +160,6 @@ class IPAddress(models.Model):
         to='Subnet',
         on_delete=models.PROTECT,
         related_name='ip_addresses',
-        blank=True,
-        null=True,
         verbose_name='Subnet'
     )
 
@@ -267,7 +265,7 @@ class IPAddress(models.Model):
     def save(self, *args, **kwargs):
         sub = self.subnet
 
-        if self.address != sub.broadcast_address and self.address != sub.subnet:
+        if self.address in list(ipaddress.ip_network(sub.subnet).hosts()):
             self.dns_name = self.dns_name.lower()
 
             reserved_hosts = sub.reserved_hosts
@@ -280,7 +278,7 @@ class IPAddress(models.Model):
             sub.utilization_percentage = (reserved_hosts_num / total_host) * 100
             sub.save()
 
-        super().save(*args, **kwargs)
+            super().save(*args, **kwargs)
 
 
 class VLAN(models.Model):

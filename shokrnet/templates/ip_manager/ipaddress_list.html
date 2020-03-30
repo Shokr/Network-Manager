@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %} Network Manager {% endblock %}
-
+{% block title %} IP List {% endblock %}
 
 {% block content %}
   <br/>
@@ -13,7 +12,6 @@
     </div>
   </div>
 
-  <hr>
 
   <!-- Main Content -->
   <div class="container">
@@ -27,35 +25,42 @@
            data-toolbar="#toolbar">
       <thead>
       <tr>
-        <th>Name</th>
-        <th>Position</th>
-        <th>Office</th>
-        <th>Age</th>
-        <th>Start date</th>
-        <th>Salary</th>
+        <th>Subnet</th>
+        <th>IP</th>
+        <th>Status</th>
+        <th>Role</th>
+        <th>Device</th>
+        <th>NAT</th>
+        <th>DNS</th>
+        <th>Actions</th>
       </tr>
       </thead>
 
       <tbody>
 
-      {#        {% for node in tree %}#}
-      <tr>
-        <td>Tiger Nixon</td>
-        <td>System Architect</td>
-        <td>Edinburgh</td>
-        <td>61</td>
-        <td>2011/04/25</td>
-        <td>$320,800</td>
-      </tr>
+      {% for obj in object_list %}
+        <tr>
+          <td>
+            <a href="{% url 'ip_manager:detail_ip' obj.pk %}">
+              {{ obj.address }}
+            </a>
+          </td>
+          <td> {{ obj.subnet }}</td>
+          <td> {{ obj.status }} </td>
+          <td> {{ obj.role }}</td>
+          <td> {{ obj.device }}</td>
+          <td> {{ obj.nat_inside }}</td>
+          <td> {{ obj.dns_name }}</td>
 
-      {#                                                                <td class="datatable-ct">#}
-      {#                                                                    <a href="{% url 'waktyNet:add_child' node.account.id_account %}"><i#}
-      {#                                                                            class="fa fa-user-plus"></i></a>#}
-      {#                                                                    <a href="#"><i class="fa fa-user-edit"></i></a>#}
-      {#                                                                    <a href="#"><i class="fa fa-trash"></i></a>#}
-      {#                                                                </td>#}
+          <td>
+            <a href="{% url 'ip_manager:update_ip' obj.pk %}"><i class="fa fa-edit"></i></a>
+            &nbsp;&nbsp;
+            <a href="{% url 'ip_manager:delete_ip' obj.pk %}"><i class="fa fa-trash"></i></a>
+          </td>
 
-      {#        {% endfor %}#}
+        </tr>
+
+      {% endfor %}
 
 
       </tbody>
