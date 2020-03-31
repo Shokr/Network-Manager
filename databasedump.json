@@ -1,0 +1,2893 @@
+[
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "sites",
+      "model": "site"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "account",
+      "model": "emailaddress"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "account",
+      "model": "emailconfirmation"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "socialaccount",
+      "model": "socialaccount"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "socialaccount",
+      "model": "socialapp"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "socialaccount",
+      "model": "socialtoken"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+      "app_label": "authtoken",
+      "model": "token"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+      "app_label": "users",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+      "app_label": "ip_manager",
+      "model": "device"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+      "app_label": "ip_manager",
+      "model": "devicetype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+      "app_label": "ip_manager",
+      "model": "ipaddress"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+      "app_label": "ip_manager",
+      "model": "location"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": {
+      "app_label": "ip_manager",
+      "model": "subnet"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 19,
+    "fields": {
+      "app_label": "ip_manager",
+      "model": "vlan"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 20,
+    "fields": {
+      "app_label": "ip_manager",
+      "model": "service"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "4of2o7dn0qcgwm17vt1vvpfe56abgqb9",
+    "fields": {
+      "session_data": "MjYwZDcwYmVjMDA2ODlmYWM0ODhkM2QwYzdjZGZiZTU5MmVjNmI1MDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI1N2Y1NmIzMWYwNjE3NzA1YThiZDk4ZTI0ZmQ3ZjRhYWE2MDNhZjEwIiwiX3Nlc3Npb25fZXhwaXJ5IjowfQ==",
+      "expire_date": "2020-04-14T21:22:43.067Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "8ppgehvat4bmyiuasmesj0thh5vsgmrz",
+    "fields": {
+      "session_data": "YzcxMWYwZTY5ODY4NjYyZTExZmMxODk1MDQwYzJhOTcyMmNmYzUyYTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI1N2Y1NmIzMWYwNjE3NzA1YThiZDk4ZTI0ZmQ3ZjRhYWE2MDNhZjEwIn0=",
+      "expire_date": "2020-04-10T19:27:15.913Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "dnyz3u4dtxdpe2fctt8cxyhz0cs1e4wk",
+    "fields": {
+      "session_data": "YzcxMWYwZTY5ODY4NjYyZTExZmMxODk1MDQwYzJhOTcyMmNmYzUyYTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI1N2Y1NmIzMWYwNjE3NzA1YThiZDk4ZTI0ZmQ3ZjRhYWE2MDNhZjEwIn0=",
+      "expire_date": "2020-04-11T19:55:38.892Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "u7pjsugshkapbxjxbjjx0mxj02jxa6cf",
+    "fields": {
+      "session_data": "YzcxMWYwZTY5ODY4NjYyZTExZmMxODk1MDQwYzJhOTcyMmNmYzUyYTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI1N2Y1NmIzMWYwNjE3NzA1YThiZDk4ZTI0ZmQ3ZjRhYWE2MDNhZjEwIn0=",
+      "expire_date": "2020-04-11T11:40:11.210Z"
+    }
+  },
+  {
+    "model": "sites.site",
+    "pk": 1,
+    "fields": {
+      "domain": "0.0.0.0:8000",
+      "name": "example.com"
+    }
+  },
+  {
+    "model": "socialaccount.socialapp",
+    "pk": 1,
+    "fields": {
+      "provider": "twitter",
+      "name": "twitteroauth",
+      "client_id": "P4L0JIFEH8abGpiDCJZZfNwxJ",
+      "secret": "HGJS3zbqH57S5Blqpm6wOe4sUoZnaBOpeKttrcb9FTUu8jGU0H",
+      "key": "",
+      "sites": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "socialaccount.socialtoken",
+    "pk": 1,
+    "fields": {
+      "app": 1,
+      "account": 1,
+      "token": "2716340250-mbZpFIuiz2uGWMm7sjbcM1XOz70abbT2RbVhWNb",
+      "token_secret": "Ey5yzvxNKxBtBN1itIhDJMBMkMJxG2wNFNe0iKVNFmGzd",
+      "expires_at": null
+    }
+  },
+  {
+    "model": "ip_manager.location",
+    "pk": 1,
+    "fields": {
+      "time_created": "2020-03-28T13:07:07.072Z",
+      "name": "OBS",
+      "address": "94 Tahrir Street, Dokki, 12311, Giza, Egypt",
+      "geolocation": "50.5745, 30.20497"
+    }
+  },
+  {
+    "model": "ip_manager.location",
+    "pk": 2,
+    "fields": {
+      "time_created": "2020-03-31T20:52:11.885Z",
+      "name": "Location1",
+      "address": "Location One",
+      "geolocation": "50.5745, 30.20000"
+    }
+  },
+  {
+    "model": "ip_manager.location",
+    "pk": 3,
+    "fields": {
+      "time_created": "2020-03-31T20:52:27.844Z",
+      "name": "Location2",
+      "address": "Location two",
+      "geolocation": "70.5745, 30.20000"
+    }
+  },
+  {
+    "model": "ip_manager.location",
+    "pk": 5,
+    "fields": {
+      "time_created": "2020-03-31T20:52:37.442Z",
+      "name": "Orange Business Services",
+      "address": "City stars, capital 8, Nasr City, Cairo Governorate",
+      "geolocation": "38FV+5H Rabaa Buildings, Al Golf, Nasr City"
+    }
+  },
+  {
+    "model": "ip_manager.devicetype",
+    "pk": 1,
+    "fields": {
+      "time_created": "2020-03-28T13:01:42.587Z",
+      "manufacturer": "Dell",
+      "model_number": "G5 5590",
+      "name": "Dell Inspiron G5 5590 Gaming Laptop"
+    }
+  },
+  {
+    "model": "ip_manager.devicetype",
+    "pk": 2,
+    "fields": {
+      "time_created": "2020-03-31T20:40:55.699Z",
+      "manufacturer": "HP",
+      "model_number": "x360",
+      "name": "Spectre x360 (2020)"
+    }
+  },
+  {
+    "model": "ip_manager.devicetype",
+    "pk": 3,
+    "fields": {
+      "time_created": "2020-03-31T20:41:16.640Z",
+      "manufacturer": "Dell",
+      "model_number": "13",
+      "name": "Dell XPS 13"
+    }
+  },
+  {
+    "model": "ip_manager.devicetype",
+    "pk": 4,
+    "fields": {
+      "time_created": "2020-03-31T20:41:54.660Z",
+      "manufacturer": "Huawei",
+      "model_number": "2020",
+      "name": "Huawei MateBook 13"
+    }
+  },
+  {
+    "model": "ip_manager.devicetype",
+    "pk": 5,
+    "fields": {
+      "time_created": "2020-03-31T20:42:16.380Z",
+      "manufacturer": "Acer",
+      "model_number": "Swift3",
+      "name": "Acer Swift 3"
+    }
+  },
+  {
+    "model": "ip_manager.devicetype",
+    "pk": 6,
+    "fields": {
+      "time_created": "2020-03-31T20:42:40.327Z",
+      "manufacturer": "Apple",
+      "model_number": "2019",
+      "name": "MacBook Pro (16-inch, 2019)"
+    }
+  },
+  {
+    "model": "ip_manager.devicetype",
+    "pk": 7,
+    "fields": {
+      "time_created": "2020-03-31T20:43:10.095Z",
+      "manufacturer": "Apple",
+      "model_number": "2009",
+      "name": "Apple MacBook Air (2019)"
+    }
+  },
+  {
+    "model": "ip_manager.devicetype",
+    "pk": 8,
+    "fields": {
+      "time_created": "2020-03-31T20:43:30.672Z",
+      "manufacturer": "Asus",
+      "model_number": "G14",
+      "name": "Asus Zephyrus G14"
+    }
+  },
+  {
+    "model": "ip_manager.devicetype",
+    "pk": 9,
+    "fields": {
+      "time_created": "2020-03-31T20:43:49.608Z",
+      "manufacturer": "Dell",
+      "model_number": "5590",
+      "name": "Dell G5 15 5590"
+    }
+  },
+  {
+    "model": "ip_manager.devicetype",
+    "pk": 10,
+    "fields": {
+      "time_created": "2020-03-31T20:44:25.238Z",
+      "manufacturer": "HP",
+      "model_number": "620",
+      "name": "HP Elite Dragonfly"
+    }
+  },
+  {
+    "model": "ip_manager.devicetype",
+    "pk": 11,
+    "fields": {
+      "time_created": "2020-03-31T20:44:50.478Z",
+      "manufacturer": "HP",
+      "model_number": "x360132019",
+      "name": "HP Envy x360 13 (2019)"
+    }
+  },
+  {
+    "model": "ip_manager.devicetype",
+    "pk": 12,
+    "fields": {
+      "time_created": "2020-03-31T20:45:23.966Z",
+      "manufacturer": "Google",
+      "model_number": "5050",
+      "name": "Google Pixelbook Go"
+    }
+  },
+  {
+    "model": "ip_manager.devicetype",
+    "pk": 13,
+    "fields": {
+      "time_created": "2020-03-31T20:45:54.865Z",
+      "manufacturer": "Microsoft",
+      "model_number": "123456",
+      "name": "Microsoft Surface Laptop 3"
+    }
+  },
+  {
+    "model": "ip_manager.device",
+    "pk": 1,
+    "fields": {
+      "time_created": "2020-03-28T13:03:29.496Z",
+      "name": "ShokrLab",
+      "serial_number": "2725286692333",
+      "mac": "30-65-EC-6F-C4-58",
+      "device_type": 1
+    }
+  },
+  {
+    "model": "ip_manager.device",
+    "pk": 2,
+    "fields": {
+      "time_created": "2020-03-31T20:46:49.277Z",
+      "name": "DEVICE_1",
+      "serial_number": "0123456789",
+      "mac": "33-00-EC-6F-C4-58",
+      "device_type": 5
+    }
+  },
+  {
+    "model": "ip_manager.device",
+    "pk": 3,
+    "fields": {
+      "time_created": "2020-03-31T20:47:25.181Z",
+      "name": "O_Device",
+      "serial_number": "27252862020333",
+      "mac": "30-65-AA-6F-C4-GG",
+      "device_type": 7
+    }
+  },
+  {
+    "model": "ip_manager.device",
+    "pk": 4,
+    "fields": {
+      "time_created": "2020-03-31T20:47:57.540Z",
+      "name": "HomeXX",
+      "serial_number": "333987459090",
+      "mac": "30-65-EC-6F-C4-GG",
+      "device_type": 8
+    }
+  },
+  {
+    "model": "ip_manager.device",
+    "pk": 5,
+    "fields": {
+      "time_created": "2020-03-31T20:48:32.343Z",
+      "name": "DEVICE_00",
+      "serial_number": "12398745050",
+      "mac": "30-DD-EC-6F-C4-58",
+      "device_type": 13
+    }
+  },
+  {
+    "model": "ip_manager.device",
+    "pk": 6,
+    "fields": {
+      "time_created": "2020-03-31T20:49:22.671Z",
+      "name": "Shokr-11",
+      "serial_number": "12398748080",
+      "mac": "30-65-EC-6F-C4-20",
+      "device_type": 6
+    }
+  },
+  {
+    "model": "ip_manager.device",
+    "pk": 7,
+    "fields": {
+      "time_created": "2020-03-31T20:50:02.179Z",
+      "name": "Oroo_PC",
+      "serial_number": "1020206692333",
+      "mac": "33-00-EC-FF-C4-58",
+      "device_type": 12
+    }
+  },
+  {
+    "model": "ip_manager.subnet",
+    "pk": 5,
+    "fields": {
+      "time_created": "2020-03-31T14:53:34.890Z",
+      "family": 4,
+      "name": "Shokr",
+      "subnet": "192.168.1.0/24",
+      "broadcast_address": "192.168.1.255",
+      "hostmask": "0.0.0.255",
+      "netmask": "255.255.255.0",
+      "total_hosts": 254,
+      "reserved_hosts": 5,
+      "utilization_percentage": "1.968503937007874",
+      "description": "testing",
+      "master_subnet": null,
+      "vlan": 1
+    }
+  },
+  {
+    "model": "ip_manager.subnet",
+    "pk": 7,
+    "fields": {
+      "time_created": "2020-03-31T21:02:15.282Z",
+      "family": 4,
+      "name": "xmen",
+      "subnet": "172.16.1.0/24",
+      "broadcast_address": "172.16.1.255",
+      "hostmask": "0.0.0.255",
+      "netmask": "255.255.255.0",
+      "total_hosts": 254,
+      "reserved_hosts": 4,
+      "utilization_percentage": "1.574803149606299",
+      "description": "testing",
+      "master_subnet": null,
+      "vlan": 2
+    }
+  },
+  {
+    "model": "ip_manager.subnet",
+    "pk": 8,
+    "fields": {
+      "time_created": "2020-03-31T21:11:31.237Z",
+      "family": 4,
+      "name": "LOOPBACK",
+      "subnet": "127.0.0.0/8",
+      "broadcast_address": "127.255.255.255",
+      "hostmask": "0.255.255.255",
+      "netmask": "255.0.0.0",
+      "total_hosts": 16777214,
+      "reserved_hosts": 3,
+      "utilization_percentage": "1.788139556424565e-05",
+      "description": "loopback addresses to the local host.",
+      "master_subnet": null,
+      "vlan": null
+    }
+  },
+  {
+    "model": "ip_manager.subnet",
+    "pk": 9,
+    "fields": {
+      "time_created": "2020-03-31T21:24:50.018Z",
+      "family": 6,
+      "name": "Shokr",
+      "subnet": "2002::1234:abcd:ffff:c0a8:101",
+      "broadcast_address": "2002::1234:abcd:ffff:c0a8:101",
+      "hostmask": "::",
+      "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+      "total_hosts": 0,
+      "reserved_hosts": 2,
+      "utilization_percentage": null,
+      "description": "testing IPV6",
+      "master_subnet": null,
+      "vlan": null
+    }
+  },
+  {
+    "model": "ip_manager.ipaddress",
+    "pk": 19,
+    "fields": {
+      "time_created": "2020-03-31T20:37:17.925Z",
+      "subnet": 5,
+      "address": "192.168.1.2",
+      "status": "active",
+      "role": "",
+      "device": null,
+      "nat_inside": null,
+      "dns_name": "",
+      "description": ""
+    }
+  },
+  {
+    "model": "ip_manager.ipaddress",
+    "pk": 20,
+    "fields": {
+      "time_created": "2020-03-31T21:28:25.118Z",
+      "subnet": 5,
+      "address": "192.168.1.5",
+      "status": "active",
+      "role": "",
+      "device": 2,
+      "nat_inside": null,
+      "dns_name": "",
+      "description": ""
+    }
+  },
+  {
+    "model": "ip_manager.ipaddress",
+    "pk": 21,
+    "fields": {
+      "time_created": "2020-03-31T21:31:39.908Z",
+      "subnet": 8,
+      "address": "127.0.0.1",
+      "status": "active",
+      "role": "loopback",
+      "device": 5,
+      "nat_inside": null,
+      "dns_name": "localhost",
+      "description": ""
+    }
+  },
+  {
+    "model": "ip_manager.ipaddress",
+    "pk": 22,
+    "fields": {
+      "time_created": "2020-03-31T21:34:36.451Z",
+      "subnet": 5,
+      "address": "192.168.1.20",
+      "status": "active",
+      "role": "",
+      "device": 6,
+      "nat_inside": 20,
+      "dns_name": "localhost",
+      "description": "00"
+    }
+  },
+  {
+    "model": "ip_manager.ipaddress",
+    "pk": 23,
+    "fields": {
+      "time_created": "2020-03-31T21:35:33.208Z",
+      "subnet": 7,
+      "address": "172.16.1.10",
+      "status": "active",
+      "role": "",
+      "device": 4,
+      "nat_inside": null,
+      "dns_name": "",
+      "description": ""
+    }
+  },
+  {
+    "model": "ip_manager.ipaddress",
+    "pk": 24,
+    "fields": {
+      "time_created": "2020-03-31T21:35:53.318Z",
+      "subnet": 7,
+      "address": "172.16.1.20",
+      "status": "active",
+      "role": "",
+      "device": null,
+      "nat_inside": null,
+      "dns_name": "",
+      "description": ""
+    }
+  },
+  {
+    "model": "ip_manager.vlan",
+    "pk": 1,
+    "fields": {
+      "time_created": "2020-03-28T13:13:28.868Z",
+      "name": "OBS_VLAN_1",
+      "location": 1,
+      "vid": 5,
+      "status": "active",
+      "description": "testing"
+    }
+  },
+  {
+    "model": "ip_manager.vlan",
+    "pk": 2,
+    "fields": {
+      "time_created": "2020-03-31T20:59:51.272Z",
+      "name": "Orange_VLAN",
+      "location": 5,
+      "vid": 20,
+      "status": "active",
+      "description": "testing 123"
+    }
+  },
+  {
+    "model": "ip_manager.vlan",
+    "pk": 3,
+    "fields": {
+      "time_created": "2020-03-31T21:00:11.659Z",
+      "name": "TestingVLAN",
+      "location": 2,
+      "vid": 50,
+      "status": "active",
+      "description": ""
+    }
+  },
+  {
+    "model": "ip_manager.service",
+    "pk": 1,
+    "fields": {
+      "time_created": "2020-03-28T13:14:12.226Z",
+      "name": "FTP",
+      "protocol": "TCP",
+      "port": 21,
+      "description": "",
+      "ip_addresses": []
+    }
+  },
+  {
+    "model": "ip_manager.service",
+    "pk": 2,
+    "fields": {
+      "time_created": "2020-03-31T20:55:22.561Z",
+      "name": "SSH",
+      "protocol": "TCP",
+      "port": 22,
+      "description": "Secure Shell (SSH)",
+      "ip_addresses": []
+    }
+  },
+  {
+    "model": "ip_manager.service",
+    "pk": 3,
+    "fields": {
+      "time_created": "2020-03-31T20:55:54.996Z",
+      "name": "Telnet",
+      "protocol": "TCP",
+      "port": 23,
+      "description": "testing",
+      "ip_addresses": [
+        19
+      ]
+    }
+  },
+  {
+    "model": "ip_manager.service",
+    "pk": 4,
+    "fields": {
+      "time_created": "2020-03-31T20:56:38.373Z",
+      "name": "SMTP",
+      "protocol": "TCP",
+      "port": 25,
+      "description": "Simple Mail Transfer Protocol (SMTP)",
+      "ip_addresses": []
+    }
+  },
+  {
+    "model": "ip_manager.service",
+    "pk": 5,
+    "fields": {
+      "time_created": "2020-03-31T20:57:03.567Z",
+      "name": "DNS",
+      "protocol": "TCP",
+      "port": 53,
+      "description": "Domain Name System (DNS)",
+      "ip_addresses": []
+    }
+  },
+  {
+    "model": "ip_manager.service",
+    "pk": 6,
+    "fields": {
+      "time_created": "2020-03-31T20:57:24.577Z",
+      "name": "HTTP",
+      "protocol": "TCP",
+      "port": 80,
+      "description": "HyperText Transfer Protocol (HTTP)",
+      "ip_addresses": []
+    }
+  },
+  {
+    "model": "ip_manager.service",
+    "pk": 7,
+    "fields": {
+      "time_created": "2020-03-31T20:58:03.186Z",
+      "name": "NTP",
+      "protocol": "UDP",
+      "port": 123,
+      "description": "Network Time Protocol (NTP)",
+      "ip_addresses": []
+    }
+  },
+  {
+    "model": "ip_manager.service",
+    "pk": 8,
+    "fields": {
+      "time_created": "2020-03-31T20:58:48.106Z",
+      "name": "Remote Desktop Protocol",
+      "protocol": "UDP",
+      "port": 3389,
+      "description": "Remote Desktop",
+      "ip_addresses": []
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 1,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 1,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 1,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 1,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 2,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 2,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 2,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 2,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 3,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 3,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 3,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 3,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 4,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 4,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 4,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 4,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add site",
+      "content_type": 5,
+      "codename": "add_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change site",
+      "content_type": 5,
+      "codename": "change_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete site",
+      "content_type": 5,
+      "codename": "delete_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view site",
+      "content_type": 5,
+      "codename": "view_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 6,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 6,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 6,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 6,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add email address",
+      "content_type": 7,
+      "codename": "add_emailaddress"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change email address",
+      "content_type": 7,
+      "codename": "change_emailaddress"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete email address",
+      "content_type": 7,
+      "codename": "delete_emailaddress"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view email address",
+      "content_type": 7,
+      "codename": "view_emailaddress"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add email confirmation",
+      "content_type": 8,
+      "codename": "add_emailconfirmation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change email confirmation",
+      "content_type": 8,
+      "codename": "change_emailconfirmation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete email confirmation",
+      "content_type": 8,
+      "codename": "delete_emailconfirmation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view email confirmation",
+      "content_type": 8,
+      "codename": "view_emailconfirmation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add social account",
+      "content_type": 9,
+      "codename": "add_socialaccount"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change social account",
+      "content_type": 9,
+      "codename": "change_socialaccount"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete social account",
+      "content_type": 9,
+      "codename": "delete_socialaccount"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view social account",
+      "content_type": 9,
+      "codename": "view_socialaccount"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add social application",
+      "content_type": 10,
+      "codename": "add_socialapp"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change social application",
+      "content_type": 10,
+      "codename": "change_socialapp"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete social application",
+      "content_type": 10,
+      "codename": "delete_socialapp"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view social application",
+      "content_type": 10,
+      "codename": "view_socialapp"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add social application token",
+      "content_type": 11,
+      "codename": "add_socialtoken"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change social application token",
+      "content_type": 11,
+      "codename": "change_socialtoken"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete social application token",
+      "content_type": 11,
+      "codename": "delete_socialtoken"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view social application token",
+      "content_type": 11,
+      "codename": "view_socialtoken"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can add Token",
+      "content_type": 12,
+      "codename": "add_token"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can change Token",
+      "content_type": 12,
+      "codename": "change_token"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can delete Token",
+      "content_type": 12,
+      "codename": "delete_token"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can view Token",
+      "content_type": 12,
+      "codename": "view_token"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 13,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 13,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 13,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 13,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+      "name": "Can add Device",
+      "content_type": 14,
+      "codename": "add_device"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+      "name": "Can change Device",
+      "content_type": 14,
+      "codename": "change_device"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+      "name": "Can delete Device",
+      "content_type": 14,
+      "codename": "delete_device"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+      "name": "Can view Device",
+      "content_type": 14,
+      "codename": "view_device"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+      "name": "Can add Device Type",
+      "content_type": 15,
+      "codename": "add_devicetype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+      "name": "Can change Device Type",
+      "content_type": 15,
+      "codename": "change_devicetype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+      "name": "Can delete Device Type",
+      "content_type": 15,
+      "codename": "delete_devicetype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+      "name": "Can view Device Type",
+      "content_type": 15,
+      "codename": "view_devicetype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+      "name": "Can add IP address",
+      "content_type": 16,
+      "codename": "add_ipaddress"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+      "name": "Can change IP address",
+      "content_type": 16,
+      "codename": "change_ipaddress"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+      "name": "Can delete IP address",
+      "content_type": 16,
+      "codename": "delete_ipaddress"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+      "name": "Can view IP address",
+      "content_type": 16,
+      "codename": "view_ipaddress"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+      "name": "Can add Site",
+      "content_type": 17,
+      "codename": "add_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+      "name": "Can change Site",
+      "content_type": 17,
+      "codename": "change_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+      "name": "Can delete Site",
+      "content_type": 17,
+      "codename": "delete_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+      "name": "Can view Site",
+      "content_type": 17,
+      "codename": "view_site"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+      "name": "Can add Subnet",
+      "content_type": 18,
+      "codename": "add_subnet"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+      "name": "Can change Subnet",
+      "content_type": 18,
+      "codename": "change_subnet"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+      "name": "Can delete Subnet",
+      "content_type": 18,
+      "codename": "delete_subnet"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+      "name": "Can view Subnet",
+      "content_type": 18,
+      "codename": "view_subnet"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+      "name": "Can add VLAN",
+      "content_type": 19,
+      "codename": "add_vlan"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+      "name": "Can change VLAN",
+      "content_type": 19,
+      "codename": "change_vlan"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+      "name": "Can delete VLAN",
+      "content_type": 19,
+      "codename": "delete_vlan"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+      "name": "Can view VLAN",
+      "content_type": 19,
+      "codename": "view_vlan"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 77,
+    "fields": {
+      "name": "Can add Service",
+      "content_type": 20,
+      "codename": "add_service"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 78,
+    "fields": {
+      "name": "Can change Service",
+      "content_type": 20,
+      "codename": "change_service"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+      "name": "Can delete Service",
+      "content_type": 20,
+      "codename": "delete_service"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+      "name": "Can view Service",
+      "content_type": 20,
+      "codename": "view_service"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 81,
+    "fields": {
+      "name": "Can add Network Location",
+      "content_type": 17,
+      "codename": "add_location"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 82,
+    "fields": {
+      "name": "Can change Network Location",
+      "content_type": 17,
+      "codename": "change_location"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 83,
+    "fields": {
+      "name": "Can delete Network Location",
+      "content_type": 17,
+      "codename": "delete_location"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 84,
+    "fields": {
+      "name": "Can view Network Location",
+      "content_type": 17,
+      "codename": "view_location"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "argon2$argon2i$v=19$m=512,t=2,p=2$emZTSFVHMDB3V1FR$vhjV0e9AtOH6J/L85MAbyA",
+      "last_login": "2020-03-31T21:22:42.922Z",
+      "is_superuser": true,
+      "username": "shokr",
+      "first_name": "",
+      "last_name": "",
+      "email": "mohammedshokr2014@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2020-03-27T19:05:14.642Z",
+      "name": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "!xY28gCwtSU5Py3rdD5OhgNskNsxJjEMkvemAHi0A",
+      "last_login": "2020-03-27T19:32:22.106Z",
+      "is_superuser": false,
+      "username": "MuhammedShokr",
+      "first_name": "Muhammed",
+      "last_name": "Shokr",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2020-03-27T19:32:21.808Z",
+      "name": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "socialaccount.socialaccount",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "provider": "twitter",
+      "uid": "2716340250",
+      "last_login": "2020-03-27T19:32:21.865Z",
+      "date_joined": "2020-03-27T19:32:21.865Z",
+      "extra_data": "{\"id\": 2716340250, \"id_str\": \"2716340250\", \"name\": \"Muhammed Shokr\", \"screen_name\": \"MuhammedShokr\", \"location\": \"Egypt\", \"description\": \"Software Engineer\", \"url\": \"https://t.co/JlhXyddCSo\", \"entities\": {\"url\": {\"urls\": [{\"url\": \"https://t.co/JlhXyddCSo\", \"expanded_url\": \"http://shokr.works\", \"display_url\": \"shokr.works\", \"indices\": [0, 23]}]}, \"description\": {\"urls\": []}}, \"protected\": false, \"followers_count\": 352, \"friends_count\": 65, \"listed_count\": 66, \"created_at\": \"Fri Aug 08 06:41:00 +0000 2014\", \"favourites_count\": 235, \"utc_offset\": null, \"time_zone\": null, \"geo_enabled\": true, \"verified\": false, \"statuses_count\": 2004, \"lang\": null, \"status\": {\"created_at\": \"Fri Mar 27 15:36:41 +0000 2020\", \"id\": 1243562593073143809, \"id_str\": \"1243562593073143809\", \"text\": \"\\\"Modern Django Project\\u00a0Examples\\\" by Omen Apps #DEVcommunity https://t.co/AZO0GQCU3r\", \"truncated\": false, \"entities\": {\"hashtags\": [{\"text\": \"DEVcommunity\", \"indices\": [46, 59]}], \"symbols\": [], \"user_mentions\": [], \"urls\": [{\"url\": \"https://t.co/AZO0GQCU3r\", \"expanded_url\": \"https://dev.to/omenapps/modern-django-project-examples-58mm\", \"display_url\": \"dev.to/omenapps/moder\\u2026\", \"indices\": [60, 83]}]}, \"source\": \"<a href=\\\"http://twitter.com\\\" rel=\\\"nofollow\\\">Twitter Web Client</a>\", \"in_reply_to_status_id\": null, \"in_reply_to_status_id_str\": null, \"in_reply_to_user_id\": null, \"in_reply_to_user_id_str\": null, \"in_reply_to_screen_name\": null, \"geo\": null, \"coordinates\": null, \"place\": null, \"contributors\": null, \"is_quote_status\": false, \"retweet_count\": 0, \"favorite_count\": 0, \"favorited\": false, \"retweeted\": false, \"possibly_sensitive\": false, \"lang\": \"en\"}, \"contributors_enabled\": false, \"is_translator\": false, \"is_translation_enabled\": false, \"profile_background_color\": \"000000\", \"profile_background_image_url\": \"http://abs.twimg.com/images/themes/theme14/bg.gif\", \"profile_background_image_url_https\": \"https://abs.twimg.com/images/themes/theme14/bg.gif\", \"profile_background_tile\": false, \"profile_image_url\": \"http://pbs.twimg.com/profile_images/1226619118830391296/zeAC5XSw_normal.jpg\", \"profile_image_url_https\": \"https://pbs.twimg.com/profile_images/1226619118830391296/zeAC5XSw_normal.jpg\", \"profile_banner_url\": \"https://pbs.twimg.com/profile_banners/2716340250/1564126860\", \"profile_link_color\": \"FF0000\", \"profile_sidebar_border_color\": \"000000\", \"profile_sidebar_fill_color\": \"000000\", \"profile_text_color\": \"000000\", \"profile_use_background_image\": false, \"has_extended_profile\": true, \"default_profile\": false, \"default_profile_image\": false, \"following\": false, \"follow_request_sent\": false, \"notifications\": false, \"translator_type\": \"none\", \"suspended\": false, \"needs_phone_verification\": false}"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2020-03-27T19:31:07.939Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "twitteroauth",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2020-03-27T19:31:26.514Z",
+      "user": 1,
+      "content_type": 5,
+      "object_id": "1",
+      "object_repr": "0.0.0.0:8000",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Domain name\", \"Display name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2020-03-27T19:31:37.103Z",
+      "user": 1,
+      "content_type": 5,
+      "object_id": "1",
+      "object_repr": "0.0.0.0:8000",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Display name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2020-03-28T13:01:42.609Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "1",
+      "object_repr": "Dell Inspiron G5 5590 Gaming Laptop - Intel Core i7-9750H, 15.6",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2020-03-28T13:02:09.055Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "1",
+      "object_repr": "Dell Inspiron G5 5590 Gaming Laptop",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2020-03-28T13:03:29.606Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "ShokrLab",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2020-03-28T13:07:07.092Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "1",
+      "object_repr": "Orange",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2020-03-28T13:07:27.255Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "1",
+      "object_repr": "OBS",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2020-03-28T13:13:28.978Z",
+      "user": 1,
+      "content_type": 19,
+      "object_id": "1",
+      "object_repr": "5",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2020-03-28T13:14:12.270Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "1",
+      "object_repr": "FTP (21/TCP)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2020-03-28T18:34:40.087Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "1",
+      "object_repr": "Shokr 192.168.1.0/24",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2020-03-28T20:50:26.824Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "1",
+      "object_repr": "192.168.1.1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2020-03-28T20:51:28.190Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "1",
+      "object_repr": "192.168.1.1",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2020-03-28T20:51:45.450Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "2",
+      "object_repr": "192.168.1.1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2020-03-28T20:55:10.645Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "2",
+      "object_repr": "192.168.1.1",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2020-03-28T20:55:25.992Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "1",
+      "object_repr": "Shokr 192.168.1.0/24",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2020-03-28T20:55:49.704Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "2",
+      "object_repr": "home alone 192.168.1.0/24",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2020-03-28T20:56:23.187Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "3",
+      "object_repr": "192.168.1.1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2020-03-29T18:26:15.117Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "4",
+      "object_repr": "192.168.0.0",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2020-03-29T18:27:35.825Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "4",
+      "object_repr": "192.168.0.0",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2020-03-29T18:27:47.266Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "None",
+      "object_repr": "192.168.0.0",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+      "action_time": "2020-03-29T18:32:43.851Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "None",
+      "object_repr": "192.168.0.0",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2020-03-29T18:35:36.163Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "None",
+      "object_repr": "192.168.0.0",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+      "action_time": "2020-03-29T18:36:18.289Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "None",
+      "object_repr": "192.168.0.0",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+      "action_time": "2020-03-29T18:38:11.306Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "None",
+      "object_repr": "192.168.0.0",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+      "action_time": "2020-03-31T14:14:08.771Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "2",
+      "object_repr": "home alone 192.168.1.0/24",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+      "action_time": "2020-03-31T14:14:27.114Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "3",
+      "object_repr": "Shokr 192.168.1.0/24",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+      "action_time": "2020-03-31T14:15:04.533Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "5",
+      "object_repr": "192.168.1.1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+      "action_time": "2020-03-31T14:16:48.657Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "5",
+      "object_repr": "192.168.1.1",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+      "action_time": "2020-03-31T14:17:03.075Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "6",
+      "object_repr": "192.168.1.1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+      "action_time": "2020-03-31T14:18:12.179Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "None",
+      "object_repr": "192.168.1.2",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+      "action_time": "2020-03-31T14:20:30.533Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "6",
+      "object_repr": "192.168.1.1",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+      "action_time": "2020-03-31T14:20:39.028Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "7",
+      "object_repr": "192.168.1.1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+      "action_time": "2020-03-31T14:20:47.181Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "8",
+      "object_repr": "192.168.1.2",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+      "action_time": "2020-03-31T14:21:01.552Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "9",
+      "object_repr": "192.168.1.3",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+      "action_time": "2020-03-31T14:21:55.499Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "7",
+      "object_repr": "192.168.1.1",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+      "action_time": "2020-03-31T14:21:55.521Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "8",
+      "object_repr": "192.168.1.2",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+      "action_time": "2020-03-31T14:21:55.542Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "9",
+      "object_repr": "192.168.1.3",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+      "action_time": "2020-03-31T14:22:07.187Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "10",
+      "object_repr": "192.168.1.1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+      "action_time": "2020-03-31T14:22:15.447Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "11",
+      "object_repr": "192.168.1.2",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+      "action_time": "2020-03-31T14:24:54.222Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "12",
+      "object_repr": "192.168.1.10",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+      "action_time": "2020-03-31T14:26:50.755Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "10",
+      "object_repr": "192.168.1.1",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+      "action_time": "2020-03-31T14:26:50.802Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "12",
+      "object_repr": "192.168.1.10",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+      "action_time": "2020-03-31T14:26:50.842Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "11",
+      "object_repr": "192.168.1.2",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+      "action_time": "2020-03-31T14:27:04.516Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "13",
+      "object_repr": "192.168.1.1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+      "action_time": "2020-03-31T14:29:24.010Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "14",
+      "object_repr": "192.168.1.2",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+      "action_time": "2020-03-31T14:31:43.428Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "15",
+      "object_repr": "192.168.1.3",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+      "action_time": "2020-03-31T14:34:24.912Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "13",
+      "object_repr": "192.168.1.1",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+      "action_time": "2020-03-31T14:34:24.936Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "14",
+      "object_repr": "192.168.1.2",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+      "action_time": "2020-03-31T14:34:24.957Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "15",
+      "object_repr": "192.168.1.3",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+      "action_time": "2020-03-31T14:34:35.658Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "16",
+      "object_repr": "192.168.1.1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+      "action_time": "2020-03-31T14:36:13.951Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "16",
+      "object_repr": "192.168.1.1",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+      "action_time": "2020-03-31T14:36:20.899Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "17",
+      "object_repr": "192.168.1.1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+      "action_time": "2020-03-31T14:37:06.484Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "17",
+      "object_repr": "192.168.1.1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"DNS Name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+      "action_time": "2020-03-31T14:37:50.545Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "17",
+      "object_repr": "192.168.1.1",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+      "action_time": "2020-03-31T14:37:57.906Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "3",
+      "object_repr": "Shokr 192.168.1.0/24",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+      "action_time": "2020-03-31T14:38:13.351Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "4",
+      "object_repr": "Shokr 192.168.1.0/24",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+      "action_time": "2020-03-31T14:38:29.342Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "18",
+      "object_repr": "192.168.1.1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+      "action_time": "2020-03-31T14:38:49.373Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "18",
+      "object_repr": "192.168.1.1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Role\", \"Description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+      "action_time": "2020-03-31T14:39:39.380Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "18",
+      "object_repr": "192.168.1.1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Role\", \"Device\", \"DNS Name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+      "action_time": "2020-03-31T14:40:56.040Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "4",
+      "object_repr": "Shokr 192.168.1.0/24",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+      "action_time": "2020-03-31T14:53:34.975Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "5",
+      "object_repr": "Shokr 192.168.1.0/24",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+      "action_time": "2020-03-31T20:40:55.720Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "2",
+      "object_repr": "Spectre x360 (2020)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+      "action_time": "2020-03-31T20:41:16.660Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "3",
+      "object_repr": "Dell XPS 13",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+      "action_time": "2020-03-31T20:41:54.681Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "4",
+      "object_repr": "Huawei MateBook 13",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+      "action_time": "2020-03-31T20:42:16.401Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "5",
+      "object_repr": "Acer Swift 3",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+      "action_time": "2020-03-31T20:42:40.348Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "6",
+      "object_repr": "MacBook Pro (16-inch, 2019)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+      "action_time": "2020-03-31T20:43:10.115Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "7",
+      "object_repr": "Apple MacBook Air (2019)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+      "action_time": "2020-03-31T20:43:30.693Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "8",
+      "object_repr": "Asus Zephyrus G14",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+      "action_time": "2020-03-31T20:43:49.630Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "9",
+      "object_repr": "Dell G5 15 5590",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+      "action_time": "2020-03-31T20:44:25.259Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "10",
+      "object_repr": "HP Elite Dragonfly",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+      "action_time": "2020-03-31T20:44:50.498Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "11",
+      "object_repr": "HP Envy x360 13 (2019)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+      "action_time": "2020-03-31T20:45:23.988Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "12",
+      "object_repr": "Google Pixelbook Go",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+      "action_time": "2020-03-31T20:45:54.888Z",
+      "user": 1,
+      "content_type": 15,
+      "object_id": "13",
+      "object_repr": "Microsoft Surface Laptop 3",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+      "action_time": "2020-03-31T20:46:49.381Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "2",
+      "object_repr": "DEVICE_1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+      "action_time": "2020-03-31T20:47:25.355Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "3",
+      "object_repr": "O_Device",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+      "action_time": "2020-03-31T20:47:57.646Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "4",
+      "object_repr": "HomeXX",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+      "action_time": "2020-03-31T20:48:32.490Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "5",
+      "object_repr": "DEVICE_00",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+      "action_time": "2020-03-31T20:49:22.771Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "6",
+      "object_repr": "Shokr-11",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+      "action_time": "2020-03-31T20:50:02.278Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "7",
+      "object_repr": "Oroo_PC",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+      "action_time": "2020-03-31T20:52:11.904Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "2",
+      "object_repr": "Location1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+      "action_time": "2020-03-31T20:52:27.884Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "3",
+      "object_repr": "Location2",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 83,
+    "fields": {
+      "action_time": "2020-03-31T20:52:36.757Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "4",
+      "object_repr": "Oran",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 84,
+    "fields": {
+      "action_time": "2020-03-31T20:52:37.468Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "5",
+      "object_repr": "Oran",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 85,
+    "fields": {
+      "action_time": "2020-03-31T20:52:49.886Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "4",
+      "object_repr": "Oran",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 86,
+    "fields": {
+      "action_time": "2020-03-31T20:54:11.987Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "5",
+      "object_repr": "Orange Business Services",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"Address\", \"Geolocation\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 87,
+    "fields": {
+      "action_time": "2020-03-31T20:55:22.614Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "2",
+      "object_repr": "SSH (22/TCP)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 88,
+    "fields": {
+      "action_time": "2020-03-31T20:55:55.087Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "3",
+      "object_repr": "Telnet (22/TCP)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 89,
+    "fields": {
+      "action_time": "2020-03-31T20:56:38.414Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "4",
+      "object_repr": "SMTP (25/TCP)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 90,
+    "fields": {
+      "action_time": "2020-03-31T20:57:03.610Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "5",
+      "object_repr": "DNS (53/TCP)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 91,
+    "fields": {
+      "action_time": "2020-03-31T20:57:24.622Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "6",
+      "object_repr": "HTTP (80/TCP)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 92,
+    "fields": {
+      "action_time": "2020-03-31T20:58:03.227Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "7",
+      "object_repr": "NTP (123/UDP)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 93,
+    "fields": {
+      "action_time": "2020-03-31T20:58:48.147Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "8",
+      "object_repr": "Remote Desktop Protocol (3389/UDP)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 94,
+    "fields": {
+      "action_time": "2020-03-31T20:59:11.866Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "3",
+      "object_repr": "Telnet (23/TCP)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Port number\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 95,
+    "fields": {
+      "action_time": "2020-03-31T20:59:51.351Z",
+      "user": 1,
+      "content_type": 19,
+      "object_id": "2",
+      "object_repr": "20",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 96,
+    "fields": {
+      "action_time": "2020-03-31T21:00:11.739Z",
+      "user": 1,
+      "content_type": 19,
+      "object_id": "3",
+      "object_repr": "50",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 97,
+    "fields": {
+      "action_time": "2020-03-31T21:02:15.363Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "7",
+      "object_repr": "xmen 172.16.1.0/24",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 98,
+    "fields": {
+      "action_time": "2020-03-31T21:12:05.955Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "8",
+      "object_repr": "LOOPBACK 127.0.0.0/8",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 99,
+    "fields": {
+      "action_time": "2020-03-31T21:34:36.677Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "22",
+      "object_repr": "192.168.1.20",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 100,
+    "fields": {
+      "action_time": "2020-03-31T21:35:33.371Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "23",
+      "object_repr": "172.16.1.10",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 101,
+    "fields": {
+      "action_time": "2020-03-31T21:35:53.443Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "24",
+      "object_repr": "172.16.1.20",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  }
+]
