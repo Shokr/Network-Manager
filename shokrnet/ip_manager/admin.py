@@ -1,4 +1,4 @@
-from django.contrib import admin, messages
+from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 
 from .forms import *
@@ -103,11 +103,11 @@ class IPAddressAdmin(ImportExportModelAdmin):
         'time_created',
     )
 
-    def save_model(self, request, obj, form, change):
-        if obj.address not in list(ipaddress.ip_network(obj.subnet.subnet).hosts()):
-            messages.add_message(request, messages.ERROR,
-                                 'This ip {} not belong to this Subnet'.format(obj.subnet.subnet))
-        obj.save()
+    # def save_model(self, request, obj, form, change):
+    #     if obj.address not in list(ipaddress.ip_network(obj.subnet.subnet).hosts()):
+    #         messages.add_message(request, messages.ERROR,
+    #                              'This ip {} not belong to this Subnet'.format(obj.subnet.subnet))
+    #     obj.save()
 
 
 @admin.register(VLAN)

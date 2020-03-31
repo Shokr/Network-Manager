@@ -4,33 +4,44 @@
 {% block content %}
   <br>
   <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
 
-      <div class="col-lg-8 col-md-10 mx-auto">
-
-        <div class="card" style="width: 18rem;">
-          {#                <img class="card-img-top" src="..." alt="Card image cap">#}
-          <div class="card-body">
-            <h5 class="card-title" style="color: #0A246A">{{ object.tweet|cut:"." }}</h5>
-            <hr>
-            <p class="card-text">{{ object.text }}</p>
-          </div>
-          <ul class="list-group list-group-flush">
-
-            <li class="list-group-item">
-              <a class="btn btn-sm btn-outline-warning"
-                 href="{% url 'core:tweet-update' object.pk %}"> Edit </a>
-            </li>
-
-
-            <li class="list-group-item">Retweets: {{ object.re_tweet_count }}</li>
-            <li class="list-group-item">Favorite: {{ object.favorite_count }}</li>
-            <li class="list-group-item">Created at: {{ object.created_at|date }}</li>
-          </ul>
-
+      <div class="card" style="width: 18rem;">
+        {#                <img class="card-img-top" src="..." alt="Card image cap">#}
+        <div class="card-body">
+          <h5 class="card-title" style="color: #0A246A">{{ object.address }}</h5>
+          <hr>
+          <p class="card-text">
+          <h6 style="color: #761c19; font-weight: bolder">Subnet:</h6>
+          {{ object.subnet }}
+          </p>
         </div>
-      </div>
+        <ul class="list-group list-group-flush">
 
+          <li class="list-group-item">Status: <span style="font-weight: bolder;">{{ object.status }}</span></li>
+          <li class="list-group-item">Role: <span style="font-weight: bolder;">{{ object.role }}</span></li>
+          <li class="list-group-item">Device: <span style="font-weight: bolder;">{{ object.device }}</span></li>
+          <li class="list-group-item">NAT: <span style="font-weight: bolder;">{{ object.nat_inside }}</span></li>
+          <li class="list-group-item">DNS: <span style="font-weight: bolder;">{{ object.dns_name }}</span></li>
+          <li class="list-group-item">Description: <span style="font-weight: bolder;">{{ object.description }}</span>
+          </li>
+
+
+          <li class="list-group-item">Created at: <span
+                  style="font-weight: bolder;">{{ object.time_created|date }}</span></li>
+
+          <li class="list-group-item">
+            <a class="btn btn-sm btn-outline-warning"
+               href="{% url 'ip_manager:update_ip' object.pk %}"> Edit </a>
+
+            <a class="btn btn-sm btn-outline-danger"
+               href="{% url 'ip_manager:delete_ip' object.pk %}"> Delete </a>
+          </li>
+
+        </ul>
+
+      </div>
     </div>
   </div>
+
 {% endblock %}

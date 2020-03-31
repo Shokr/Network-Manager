@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} IP Manager {% endblock %}
+
+{% block css %}
+    <style>
+        .counter {
+            background-color: #f5f5f5;
+            padding: 20px 0;
+            border-radius: 5px;
+        }
+
+        .count-title {
+            font-size: 40px;
+            font-weight: normal;
+            margin-top: 10px;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        .count-text {
+            font-size: 13px;
+            font-weight: normal;
+            margin-top: 10px;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        .fa-2x {
+            margin: 0 auto;
+            float: none;
+            display: table;
+            color: #4ad1e5;
+        }
+    </style>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+{% endblock css %}
+
+
+{% block content %}
+    <br/>
+
+    <div class="container">
+        <div class="row">
+            <br/>
+            <div class="col text-center">
+                <h2>Network Manager</h2>
+                <p>Welcome <span style="color: #761c19; font-weight: bolder;">{{ user }}</span></p>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-list fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="100" data-speed="1500">
+                        <a href="{% url 'ip_manager:list_ip' %}">
+                            {{ ip }}
+                        </a>
+                    </h2>
+                    <p class="count-text "><h6>IP</h6></p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-magic fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="1700" data-speed="1500">
+                        <a href="{% url 'ip_manager:list_subnet' %}">
+                            {{ subnet }}
+                        </a>
+                    </h2>
+                    <p class="count-text "><h6>Subnet</h6></p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-lightbulb-o fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="11900" data-speed="1500">
+                        <a href="#">
+                            {{ vlan }}
+                        </a>
+                    </h2>
+                    <p class="count-text "><h6>VALN</h6></p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-bug fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="157" data-speed="1500">
+                        <a href="#">
+                            {{ service }}
+                        </a>
+                    </h2>
+                    <p class="count-text "><h6>Services</h6></p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="row text-center">
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-desktop fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="157" data-speed="1500">
+                        <a href="#">
+                            {{ device }}
+                        </a>
+                    </h2>
+                    <p class="count-text "><h6>Devices</h6></p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-tag fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="157" data-speed="1500">
+                        <a href="#">
+                            {{ device_type }}
+                        </a>
+                    </h2>
+                    <p class="count-text "><h6>Device Types</h6></p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-location-arrow fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="157" data-speed="1500">
+                        <a href="#">
+                            {{ location }}
+                        </a>
+                    </h2>
+                    <p class="count-text "><h6>Locations</h6></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}

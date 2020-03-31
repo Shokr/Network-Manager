@@ -26,7 +26,7 @@ class Location(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('ip_manager:Location', args=[self.pk])
+        return reverse('ip_manager:detail_location', args=[self.pk])
 
 
 class DeviceType(models.Model):
@@ -46,7 +46,7 @@ class DeviceType(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('ip_manager:device_type', args=[self.pk])
+        return reverse('ip_manager:detail_device_type', args=[self.pk])
 
 
 class Device(models.Model):
@@ -71,7 +71,7 @@ class Device(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('ip_manager:device', args=[self.pk])
+        return reverse('ip_manager:detail_device', args=[self.pk])
 
 
 class Subnet(models.Model):
@@ -135,7 +135,7 @@ class Subnet(models.Model):
             return str(self.subnet)
 
     def get_absolute_url(self):
-        return reverse('ip_manager:subnet', args=[self.pk])
+        return reverse('ip_manager:detail_subnet', args=[self.pk])
 
     def hosts(self):
         ip_list = list(ipaddress.ip_network(self.subnet).hosts())
@@ -260,14 +260,15 @@ class IPAddress(models.Model):
         return str(self.address)
 
     def get_absolute_url(self):
-        return reverse('ip_manager:ipaddress', args=[self.pk])
+        return reverse('ip_manager:detail_ip', args=[self.pk])
 
     def save(self, *args, **kwargs):
+        self.dns_name = self.dns_name.lower()
+
         sub = self.subnet
 
-        if self.address in list(ipaddress.ip_network(sub.subnet).hosts()):
-            self.dns_name = self.dns_name.lower()
-
+        if ipaddress.ip_network(self.address).network_address in list(
+            ipaddress.ip_network(sub.subnet).hosts()) and self.pk is None:
             reserved_hosts = sub.reserved_hosts
             sub.reserved_hosts = reserved_hosts + 1
             sub.save()
@@ -279,6 +280,7 @@ class IPAddress(models.Model):
             sub.save()
 
             super().save(*args, **kwargs)
+        # super(IPAddress, self).save(*args, **kwargs)
 
 
 class VLAN(models.Model):
@@ -334,7 +336,7 @@ class VLAN(models.Model):
         return str(self.vid)
 
     def get_absolute_url(self):
-        return reverse('ip_manager:vlan', args=[self.pk])
+        return reverse('ip_manager:detail_vlan', args=[self.pk])
 
 
 class Service(models.Model):
@@ -384,4 +386,4 @@ class Service(models.Model):
         return '{} ({}/{})'.format(self.name, self.port, self.protocol)
 
     def get_absolute_url(self):
-        return reverse('ip_manager:service', args=[self.pk])
+        return reverse('ip_manager:detail_service', args=[self.pk])

@@ -12,7 +12,6 @@
     </div>
   </div>
 
-  <hr>
 
   <!-- Main Content -->
   <div class="container">
@@ -26,42 +25,42 @@
            data-toolbar="#toolbar">
       <thead>
       <tr>
-        <th>Version</th>
-        <th>VLAN</th>
         <th>Name</th>
-        <th>Subnet</th>
-        <th>Broadcast IP</th>
-        <th>Host Mask</th>
-        <th>Net Mask</th>
-        <th>Total</th>
-        <th>Reserved</th>
-        <th>Utilization(%)</th>
-        <th>Master Subnet</th>
+        <th>Subnet IP</th>
+        <th>Host mask</th>
+        <th>Net mask</th>
+        <th>Total Hosts</th>
+        <th>Reserved Hosts</th>
+        <th>VLAN ID</th>
         <th>Actions</th>
       </tr>
       </thead>
 
       <tbody>
 
-      {% for obj in objects %}
+      {% for obj in object_list %}
         <tr>
-          <td> obj.family</td>
-          <td> obj.vlan</td>
-          <td> obj.name</td>
-          <td> obj.subnet</td>
-          <td> obj.broadcast_address</td>
-          <td> obj.hostmask</td>
-          <td> obj.netmask</td>
-          <td> obj.total_hosts</td>
-          <td> obj.reserved_hosts</td>
-          <td> obj.utilization_percentage</td>
-          <td> obj.master_subnet</td>
-        </tr>
 
-        <td class="datatable-ct">
-          <a href="{% url 'ip_manager:edit_subnet' obj.pk %}"><i class="fa fa-user-edit"></i></a>
-          <a href="{% url 'ip_manager:delete_subnet' obj.pk %}"><i class="fa fa-trash"></i></a>
-        </td>
+          <td> {{ obj.name }}</td>
+
+          <td>
+            <a href="{% url 'ip_manager:detail_subnet' obj.pk %}">
+              {{ obj.subnet }}
+            </a>
+          </td>
+          <td> {{ obj.hostmask }}</td>
+          <td> {{ obj.netmask }}</td>
+          <td> {{ obj.total_hosts }}</td>
+          <td> {{ obj.reserved_hosts }}</td>
+          <td> {{ obj.vlan }}</td>
+
+          <td>
+            <a href="{% url 'ip_manager:update_subnet' obj.pk %}"><i class="fa fa-edit"></i></a>
+            &nbsp;&nbsp;
+            <a href="{% url 'ip_manager:delete_subnet' obj.pk %}"><i class="fa fa-trash"></i></a>
+          </td>
+
+        </tr>
 
       {% endfor %}
 

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <br>
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <div class="card" style="width: 18rem;">
+        {#                <img class="card-img-top" src="..." alt="Card image cap">#}
+        <div class="card-body">
+          <h5 class="card-title" style="color: #0A246A">{{ object.subnet }}</h5>
+          <hr>
+          <p class="card-text">
+          <h6 style="color: #761c19; font-weight: bolder"> {{ object.name }} </h6>
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+
+          <li class="list-group-item">Version: <span style="font-weight: bolder;">{{ object.family }}</span></li>
+          <li class="list-group-item">Broadcast: <span
+                  style="font-weight: bolder;">{{ object.broadcast_address }}</span></li>
+          <li class="list-group-item">Host MASK: <span style="font-weight: bolder;">{{ object.hostmask }}</span></li>
+          <li class="list-group-item">Net MASK: <span style="font-weight: bolder;">{{ object.netmask }}</span></li>
+          <li class="list-group-item">Total Hosts: <span style="font-weight: bolder;">{{ object.total_hosts }}</span>
+          </li>
+          <li class="list-group-item">Reserved Hosts: <span
+                  style="font-weight: bolder;">{{ object.reserved_hosts }}</span></li>
+          <li class="list-group-item">Utilization(%): <span
+                  style="font-weight: bolder;">{{ object.utilization_percentage }}</span></li>
+          <li class="list-group-item">Master Subnet: <span
+                  style="font-weight: bolder;">{{ object.master_subnet }}</span></li>
+          <li class="list-group-item">VLAN: <span style="font-weight: bolder;">{{ object.vlan.name }}</span></li>
+          <li class="list-group-item">Description: <span style="font-weight: bolder;">{{ object.description }}</span>
+          </li>
+
+          <li class="list-group-item">Created at: <span
+                  style="font-weight: bolder;">{{ object.time_created|date }}</span></li>
+
+          <li class="list-group-item">
+            <a class="btn btn-sm btn-outline-warning"
+               href="{% url 'ip_manager:update_subnet' object.pk %}"> Edit </a>
+
+            <a class="btn btn-sm btn-outline-danger"
+               href="{% url 'ip_manager:delete_subnet' object.pk %}"> Delete </a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+{% endblock %}
