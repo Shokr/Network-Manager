@@ -221,6 +221,7 @@ class IPAddress(models.Model):
         to='Device',
         on_delete=models.CASCADE,
         related_name='ip_addresses',
+        unique=True,
         blank=True,
         null=True
     )

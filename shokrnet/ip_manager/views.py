@@ -225,8 +225,8 @@ def delete_Location(request, pk):
 # class IPDelete(DeleteView):
 #     model = IPAddress
 #     success_url = reverse_lazy('ip_manager:home')
-
-
+#
+#
 # @login_required
 # def exportIPCSV(request):
 #     resource = IPResource()

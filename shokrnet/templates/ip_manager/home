@@ -85,7 +85,7 @@
                 <div class="counter">
                     <i class="fa fa-lightbulb-o fa-2x"></i>
                     <h2 class="timer count-title count-number" data-to="11900" data-speed="1500">
-                        <a href="#">
+                        <a href="{% url 'ip_manager:list_vlan' %}">
                             {{ vlan }}
                         </a>
                     </h2>
@@ -96,7 +96,7 @@
                 <div class="counter">
                     <i class="fa fa-bug fa-2x"></i>
                     <h2 class="timer count-title count-number" data-to="157" data-speed="1500">
-                        <a href="#">
+                        <a href="{% url 'ip_manager:list_service' %}">
                             {{ service }}
                         </a>
                     </h2>
@@ -111,7 +111,7 @@
                 <div class="counter">
                     <i class="fa fa-desktop fa-2x"></i>
                     <h2 class="timer count-title count-number" data-to="157" data-speed="1500">
-                        <a href="#">
+                        <a href="{% url 'ip_manager:list_device' %}">
                             {{ device }}
                         </a>
                     </h2>
@@ -122,7 +122,7 @@
                 <div class="counter">
                     <i class="fa fa-tag fa-2x"></i>
                     <h2 class="timer count-title count-number" data-to="157" data-speed="1500">
-                        <a href="#">
+                        <a href="{% url 'ip_manager:list_device_type' %}">
                             {{ device_type }}
                         </a>
                     </h2>
@@ -133,7 +133,7 @@
                 <div class="counter">
                     <i class="fa fa-location-arrow fa-2x"></i>
                     <h2 class="timer count-title count-number" data-to="157" data-speed="1500">
-                        <a href="#">
+                        <a href="{% url 'ip_manager:list_location' %}">
                             {{ location }}
                         </a>
                     </h2>

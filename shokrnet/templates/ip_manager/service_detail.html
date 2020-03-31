@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <br>
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <div class="card" style="width: 18rem;">
+        {#                <img class="card-img-top" src="..." alt="Card image cap">#}
+        <div class="card-body">
+          <h5 class="card-title" style="color: #0A246A">{{ object.name }}</h5>
+          <hr>
+        </div>
+        <ul class="list-group list-group-flush">
+
+          <li class="list-group-item">Status: <span style="font-weight: bolder;">{{ object.protocol }}</span></li>
+          <li class="list-group-item">Role: <span style="font-weight: bolder;">{{ object.port }}</span></li>
+          <li class="list-group-item">Role: <span style="font-weight: bolder;">{{ object.ip_addresses }}</span></li>
+
+          <li class="list-group-item">Description: <span style="font-weight: bolder;">{{ object.description }}</span>
+          </li>
+
+
+          <li class="list-group-item">Created at: <span
+                  style="font-weight: bolder;">{{ object.time_created|date }}</span></li>
+
+          <li class="list-group-item">
+            <a class="btn btn-sm btn-outline-warning"
+               href="{% url 'ip_manager:update_service' object.pk %}"> Edit </a>
+
+            <a class="btn btn-sm btn-outline-danger"
+               href="{% url 'ip_manager:delete_service' object.pk %}"> Delete </a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

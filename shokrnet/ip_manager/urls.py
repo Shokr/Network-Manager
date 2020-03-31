@@ -25,25 +25,31 @@ urlpatterns = [
     path('vlan/<int:pk>/', VLANDetailView.as_view(), name='detail_vlan'),
     path('vlan/delete/<int:pk>/', delete_VLAN, name='delete_vlan'),
     #
-    # path('service/', SubnetListView.as_view(), name='list_subnet'),
-    # path('service/add/', SubnetCreate.as_view(), name='add_subnet'),
-    # path('service/update/<int:pk>/', SubnetUpdate.as_view(), name='update_subnet'),
-    # path('service/<int:pk>/', SubnetDetailView.as_view(), name='detail_subnet'),
-    # path('service/delete/<int:pk>/', delete_subnet, name='delete_subnet'),
-    #
-    # path('device/', SubnetListView.as_view(), name='list_subnet'),
-    # path('device/add/', SubnetCreate.as_view(), name='add_subnet'),
-    # path('device/update/<int:pk>/', SubnetUpdate.as_view(), name='update_subnet'),
-    # path('device/<int:pk>/', SubnetDetailView.as_view(), name='detail_subnet'),
-    # path('device/delete/<int:pk>/', delete_subnet, name='delete_subnet'),
-    #
-    # path('deviceType/', SubnetListView.as_view(), name='list_subnet'),
-    # path('deviceType/add/', SubnetCreate.as_view(), name='add_subnet'),
-    # path('deviceType/update/<int:pk>/', SubnetUpdate.as_view(), name='update_subnet'),
-    # path('deviceType/<int:pk>/', SubnetDetailView.as_view(), name='detail_subnet'),
-    # path('deviceType/delete/<int:pk>/', delete_subnet, name='delete_subnet'),
+    path('service/', ServiceListView.as_view(), name='list_service'),
+    path('service/add/', ServiceCreate.as_view(), name='add_service'),
+    path('service/update/<int:pk>/', ServiceUpdate.as_view(), name='update_service'),
+    path('service/<int:pk>/', ServiceDetailView.as_view(), name='detail_service'),
+    path('service/delete/<int:pk>/', delete_Service, name='delete_service'),
 
-    # # EXPORTING
+    path('device/', DeviceListView.as_view(), name='list_device'),
+    path('device/add/', DeviceCreate.as_view(), name='add_device'),
+    path('device/update/<int:pk>/', DeviceUpdate.as_view(), name='update_device'),
+    path('device/<int:pk>/', DeviceDetailView.as_view(), name='detail_device'),
+    path('device/delete/<int:pk>/', delete_Device, name='delete_device'),
+
+    path('deviceType/', DeviceTypeListView.as_view(), name='list_device_type'),
+    path('deviceType/add/', DeviceTypeCreate.as_view(), name='add_device_type'),
+    path('deviceType/update/<int:pk>/', DeviceTypeUpdate.as_view(), name='update_device_type'),
+    path('deviceType/<int:pk>/', DeviceTypeDetailView.as_view(), name='detail_device_type'),
+    path('deviceType/delete/<int:pk>/', delete_DeviceType, name='delete_device_type'),
+
+    path('location/', LocationListView.as_view(), name='list_location'),
+    path('location/add/', LocationCreate.as_view(), name='add_location'),
+    path('location/update/<int:pk>/', LocationUpdate.as_view(), name='update_location'),
+    path('location/<int:pk>/', LocationDetailView.as_view(), name='detail_location'),
+    path('location/delete/<int:pk>/', delete_Location, name='delete_location'),
+
+    # # # EXPORTING
     # path('ip/csv', exportIPCSV, name='IPCSV'),
     # path('ip/json', exportIPJSON, name='IPJSON'),
     # path('ip/xls', exportIPXLS, name='IPXLS'),

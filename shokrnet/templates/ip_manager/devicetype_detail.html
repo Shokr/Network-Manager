@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <br>
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <div class="card" style="width: 18rem;">
+        {#                <img class="card-img-top" src="..." alt="Card image cap">#}
+        <div class="card-body">
+          <h5 class="card-title" style="color: #0A246A">{{ object.name }}</h5>
+          <hr>
+        </div>
+        <ul class="list-group list-group-flush">
+
+          <li class="list-group-item">Model Number: <span style="font-weight: bolder;">{{ object.model_number }}</span>
+          </li>
+          <li class="list-group-item">Manufacturer: <span style="font-weight: bolder;">{{ object.manufacturer }}</span>
+          </li>
+          </li>
+
+
+          <li class="list-group-item">Created at: <span
+                  style="font-weight: bolder;">{{ object.time_created|date }}</span></li>
+
+          <li class="list-group-item">
+            <a class="btn btn-sm btn-outline-warning"
+               href="{% url 'ip_manager:update_device_type' object.pk %}"> Edit </a>
+
+            <a class="btn btn-sm btn-outline-danger"
+               href="{% url 'ip_manager:delete_device_type' object.pk %}"> Delete </a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
