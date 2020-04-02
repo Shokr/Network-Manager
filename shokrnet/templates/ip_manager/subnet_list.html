@@ -55,8 +55,8 @@
           <td> {{ obj.vlan }}</td>
 
           <td>
+            <a href="{% url 'ip_manager:subnet_ips' obj.pk %}"><i class="fa fa-list-ul"></i></a>
             <a href="{% url 'ip_manager:update_subnet' obj.pk %}"><i class="fa fa-edit"></i></a>
-            &nbsp;&nbsp;
             <a href="{% url 'ip_manager:delete_subnet' obj.pk %}"><i class="fa fa-trash"></i></a>
           </td>
 

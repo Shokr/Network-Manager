@@ -38,6 +38,9 @@
                   style="font-weight: bolder;">{{ object.time_created|date }}</span></li>
 
           <li class="list-group-item">
+            <a class="btn btn-sm btn-outline-info"
+               href="{% url 'ip_manager:subnet_ips' object.pk %}"> IP List </a>
+
             <a class="btn btn-sm btn-outline-warning"
                href="{% url 'ip_manager:update_subnet' object.pk %}"> Edit </a>
 

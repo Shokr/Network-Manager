@@ -19,6 +19,8 @@ urlpatterns = [
     path('subnet/<int:pk>/', SubnetDetailView.as_view(), name='detail_subnet'),
     path('subnet/delete/<int:pk>/', delete_subnet, name='delete_subnet'),
 
+    path('subnet/ip_list/<int:pk>/', subnet_ips, name='subnet_ips'),
+
     path('vlan/', VLANListView.as_view(), name='list_vlan'),
     path('vlan/add/', VLANCreate.as_view(), name='add_vlan'),
     path('vlan/update/<int:pk>/', VLANUpdate.as_view(), name='update_vlan'),
