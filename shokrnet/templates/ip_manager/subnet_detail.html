@@ -26,8 +26,15 @@
           </li>
           <li class="list-group-item">Reserved Hosts: <span
                   style="font-weight: bolder;">{{ object.reserved_hosts }}</span></li>
-          <li class="list-group-item">Utilization(%): <span
-                  style="font-weight: bolder;">{{ object.utilization_percentage }}</span></li>
+          <li class="list-group-item">Utilization(%):
+            <div class="progress">
+              <div class="progress-bar" role="progressbar"
+                   aria-valuenow="{{ object.utilization_percentage|floatformat }}" aria-valuemin="0" aria-valuemax="100"
+                   style="width: {{ object.utilization_percentage|floatformat }}%;">
+                {{ object.utilization_percentage|floatformat }}
+              </div>
+            </div>
+          </li>
           <li class="list-group-item">Master Subnet: <span
                   style="font-weight: bolder;">{{ object.master_subnet }}</span></li>
           <li class="list-group-item">VLAN: <span style="font-weight: bolder;">{{ object.vlan.name }}</span></li>
