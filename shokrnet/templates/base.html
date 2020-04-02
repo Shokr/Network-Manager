@@ -33,6 +33,9 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.16.0/bootstrap-table.min.css" rel="stylesheet">
 
+    <!-- Ex CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet"/>
+
   {% endblock %}
 
 </head>
@@ -129,6 +132,19 @@
   <script>
     $(document).ready(function () {
       $('#table').DataTable();
+    });
+  </script>
+
+  <!-- Ex JS -->
+
+  <script>window.jQuery = window.$ = django.jQuery;</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      {# timeout required because filtered is added after load #}
+      setTimeout(function () {
+        $('select:not(.filtered):not(.admin-autocomplete)').select2();
+      }, 0);
     });
   </script>
 
