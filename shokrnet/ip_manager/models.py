@@ -18,7 +18,7 @@ class Location(models.Model):
 
     class Meta:
         db_table = 'Locations'
-        ordering = ['name']
+        ordering = ['-time_created']
         verbose_name = 'Network Location'
         verbose_name_plural = 'Network Locations'
 
@@ -38,7 +38,7 @@ class DeviceType(models.Model):
 
     class Meta:
         db_table = 'device_types'
-        ordering = ['name']
+        ordering = ['-time_created']
         verbose_name = 'Device Type'
         verbose_name_plural = 'Device Types'
 
@@ -63,7 +63,7 @@ class Device(models.Model):
 
     class Meta:
         db_table = 'devices'
-        ordering = ('device_type', 'name')
+        ordering = ('-time_created', 'device_type')
         verbose_name = 'Device'
         verbose_name_plural = 'Devices'
 
@@ -94,7 +94,7 @@ class Subnet(models.Model):
         db_index=True,
         verbose_name="Subnet",
         unique=True,
-        help_text='Subnet in CIDR notation, eg: "10.0.0.0/24" for IPv4 and "fdb6:21b:a477::9f7/64" for IPv6')
+        help_text='Subnet in CIDR notation, eg: "10.0.0.0/24" for IPv4')
 
     broadcast_address = models.GenericIPAddressField(verbose_name="Broadcast IP")
     hostmask = models.GenericIPAddressField(verbose_name="Host Mask")
@@ -122,6 +122,7 @@ class Subnet(models.Model):
 
     class Meta:
         db_table = 'subnets'
+        ordering = ('-time_created',)
         verbose_name = 'Subnet'
         verbose_name_plural = 'Subnets'
         indexes = [
@@ -253,7 +254,7 @@ class IPAddress(models.Model):
 
     class Meta:
         db_table = 'ips'
-        ordering = ('address', 'pk')
+        ordering = ('-time_created', 'address', 'pk')
         verbose_name = 'IP'
         verbose_name_plural = 'IPs'
 
@@ -328,7 +329,7 @@ class VLAN(models.Model):
 
     class Meta:
         db_table = 'vlans'
-        ordering = ('vid', 'pk')
+        ordering = ('-time_created', 'vid', 'pk')
 
         verbose_name = 'VLAN'
         verbose_name_plural = 'VLANs'
@@ -379,7 +380,7 @@ class Service(models.Model):
 
     class Meta:
         db_table = 'services'
-        ordering = ('protocol', 'port', 'pk')
+        ordering = ('-time_created', 'protocol', 'port', 'pk')
         verbose_name = 'Service'
         verbose_name_plural = 'Services'
 

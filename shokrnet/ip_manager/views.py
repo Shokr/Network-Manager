@@ -32,6 +32,9 @@ class IPCreate(CreateView):
     model = IPAddress
     fields = ['subnet', 'address', 'status', 'role', 'device', 'nat_inside', 'dns_name', 'description']
 
+    def get_success_url(self):
+        return reverse('ip_manager:list_ip')
+
 
 class IPUpdate(UpdateView):
     model = IPAddress

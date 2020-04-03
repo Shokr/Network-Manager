@@ -28,7 +28,7 @@
         <th>Name</th>
         <th>Protocol</th>
         <th>Port</th>
-        <th>IP Addresses</th>
+        {#        <th>IP Addresses</th>#}
         <th>Actions</th>
       </tr>
       </thead>
@@ -46,7 +46,7 @@
 
           <td> {{ obj.protocol }}</td>
           <td> {{ obj.port }}</td>
-          <td> {{ obj.ip_addresses }}</td>
+          {#          <td> {{ obj.ip_addresses }}</td>#}
 
           <td>
             <a href="{% url 'ip_manager:update_service' obj.pk %}"><i class="fa fa-edit"></i></a>
