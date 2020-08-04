@@ -266,19 +266,14 @@ def delete_Location(request, pk):
 @login_required
 def subnet_ips(request, pk):
     subnet = get_object_or_404(Subnet, pk=pk)
-    used_ips = IPAddress.objects.filter(subnet=subnet).values_list("address",
-                                                                   flat=True)
+    used_ips = IPAddress.objects.filter(subnet=subnet).values_list("address", flat=True)
     ip_list = list(ipaddress.ip_network(subnet.subnet).hosts())
     free_ips = list(set(ip_list) - set(used_ips))
 
     return render(
         request,
         "ip_manager/subnet_ip_list.html",
-        {
-            "subnet": subnet,
-            "usedIPS": used_ips,
-            "freeIPS": free_ips
-        },
+        {"subnet": subnet, "usedIPS": used_ips, "freeIPS": free_ips},
     )
 
 
