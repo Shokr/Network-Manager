@@ -41,7 +41,12 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
-DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": "db.sqlite3",}}
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "db.sqlite3",
+    }
+}
 
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
@@ -116,11 +121,21 @@ PASSWORD_HASHERS = [
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
+        "NAME":
+        "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
+    {
+        "NAME":
+        "django.contrib.auth.password_validation.MinimumLengthValidator"
+    },
+    {
+        "NAME":
+        "django.contrib.auth.password_validation.CommonPasswordValidator"
+    },
+    {
+        "NAME":
+        "django.contrib.auth.password_validation.NumericPasswordValidator"
+    },
 ]
 
 # MIDDLEWARE
@@ -162,34 +177,32 @@ MEDIA_URL = "/media/"
 # TEMPLATES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#templates
-TEMPLATES = [
-    {
-        # https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-        # https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
-        "DIRS": [str(APPS_DIR / "templates")],
-        "OPTIONS": {
-            # https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
-            # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
-            "loaders": [
-                "django.template.loaders.filesystem.Loader",
-                "django.template.loaders.app_directories.Loader",
-            ],
-            # https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
-            "context_processors": [
-                "django.template.context_processors.debug",
-                "django.template.context_processors.request",
-                "django.contrib.auth.context_processors.auth",
-                "django.template.context_processors.i18n",
-                "django.template.context_processors.media",
-                "django.template.context_processors.static",
-                "django.template.context_processors.tz",
-                "django.contrib.messages.context_processors.messages",
-                "shokrnet.utils.context_processors.settings_context",
-            ],
-        },
-    }
-]
+TEMPLATES = [{
+    # https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
+    "BACKEND": "django.template.backends.django.DjangoTemplates",
+    # https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
+    "DIRS": [str(APPS_DIR / "templates")],
+    "OPTIONS": {
+        # https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
+        # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
+        "loaders": [
+            "django.template.loaders.filesystem.Loader",
+            "django.template.loaders.app_directories.Loader",
+        ],
+        # https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
+        "context_processors": [
+            "django.template.context_processors.debug",
+            "django.template.context_processors.request",
+            "django.contrib.auth.context_processors.auth",
+            "django.template.context_processors.i18n",
+            "django.template.context_processors.media",
+            "django.template.context_processors.static",
+            "django.template.context_processors.tz",
+            "django.contrib.messages.context_processors.messages",
+            "shokrnet.utils.context_processors.settings_context",
+        ],
+    },
+}]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#form-renderer
 FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
@@ -200,7 +213,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 # FIXTURES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#fixture-dirs
-FIXTURE_DIRS = (str(APPS_DIR / "fixtures"),)
+FIXTURE_DIRS = (str(APPS_DIR / "fixtures"), )
 
 # SECURITY
 # ------------------------------------------------------------------------------
@@ -239,10 +252,15 @@ MANAGERS = ADMINS
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
-    "filters": {"require_debug_true": {"()": "django.utils.log.RequireDebugTrue",}},
+    "filters": {
+        "require_debug_true": {
+            "()": "django.utils.log.RequireDebugTrue",
+        }
+    },
     "formatters": {
         "verbose": {
-            "format": "%(levelname)s %(asctime)s %(module)s "
+            "format":
+            "%(levelname)s %(asctime)s %(module)s "
             "%(process)d %(thread)d %(message)s"
         }
     },
@@ -254,13 +272,22 @@ LOGGING = {
             "formatter": "verbose",
         }
     },
-    "loggers": {"django.db.backends": {"level": "DEBUG", "handlers": ["console"],}},
-    "root": {"level": "INFO", "handlers": ["console"]},
+    "loggers": {
+        "django.db.backends": {
+            "level": "DEBUG",
+            "handlers": ["console"],
+        }
+    },
+    "root": {
+        "level": "INFO",
+        "handlers": ["console"]
+    },
 }
 
 # django-allauth
 # ------------------------------------------------------------------------------
-ACCOUNT_ALLOW_REGISTRATION = env.bool("DJANGO_ACCOUNT_ALLOW_REGISTRATION", True)
+ACCOUNT_ALLOW_REGISTRATION = env.bool("DJANGO_ACCOUNT_ALLOW_REGISTRATION",
+                                      True)
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_AUTHENTICATION_METHOD = "username"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
@@ -284,11 +311,12 @@ REST_FRAMEWORK = {
         "rest_framework.renderers.JSONRenderer",
         "rest_framework.renderers.BrowsableAPIRenderer",
     ),
-    "DEFAULT_PERMISSION_CLASSES": (
-        "rest_framework.permissions.DjangoModelPermissions",
-    ),
-    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
-    "PAGE_SIZE": 100,
+    "DEFAULT_PERMISSION_CLASSES":
+    ("rest_framework.permissions.DjangoModelPermissions", ),
+    "DEFAULT_PAGINATION_CLASS":
+    "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE":
+    100,
 }
 
 CORS_ORIGIN_ALLOW_ALL = True

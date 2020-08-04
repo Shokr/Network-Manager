@@ -36,15 +36,17 @@ class Migration(migrations.Migration):
                 ("name", models.CharField(max_length=64)),
                 (
                     "serial_number",
-                    models.CharField(
-                        blank=True, max_length=100, null=True, unique=True
-                    ),
+                    models.CharField(blank=True,
+                                     max_length=100,
+                                     null=True,
+                                     unique=True),
                 ),
                 (
                     "mac",
-                    models.CharField(
-                        blank=True, max_length=100, null=True, unique=True
-                    ),
+                    models.CharField(blank=True,
+                                     max_length=100,
+                                     null=True,
+                                     unique=True),
                 ),
             ],
             options={
@@ -113,7 +115,8 @@ class Migration(migrations.Migration):
                         null=True,
                     ),
                 ),
-                ("address", models.GenericIPAddressField(help_text="IPv4 address")),
+                ("address",
+                 models.GenericIPAddressField(help_text="IPv4 address")),
                 (
                     "status",
                     models.CharField(
@@ -154,7 +157,8 @@ class Migration(migrations.Migration):
                         validators=[
                             django.core.validators.RegexValidator(
                                 code="invalid",
-                                message="Only alphanumeric characters, hyphens, periods, and underscores are allowed in DNS names",
+                                message=
+                                "Only alphanumeric characters, hyphens, periods, and underscores are allowed in DNS names",
                                 regex="^[0-9A-Za-z._-]+$",
                             )
                         ],
@@ -176,7 +180,8 @@ class Migration(migrations.Migration):
                     "nat_inside",
                     models.OneToOneField(
                         blank=True,
-                        help_text='The IP for which this address is the "outside" IP',
+                        help_text=
+                        'The IP for which this address is the "outside" IP',
                         null=True,
                         on_delete=django.db.models.deletion.SET_NULL,
                         related_name="nat_outside",
@@ -213,7 +218,8 @@ class Migration(migrations.Migration):
                         null=True,
                     ),
                 ),
-                ("name", models.CharField(blank=True, max_length=50, null=True)),
+                ("name", models.CharField(blank=True, max_length=50,
+                                          null=True)),
                 ("address", models.TextField(blank=True, null=True)),
                 (
                     "geolocation",
@@ -314,16 +320,18 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "family",
-                    models.PositiveSmallIntegerField(
-                        choices=[(4, "IPv4"), (6, "IPv6")], editable=False
-                    ),
+                    models.PositiveSmallIntegerField(choices=[(4, "IPv4"),
+                                                              (6, "IPv6")],
+                                                     editable=False),
                 ),
-                ("name", models.CharField(blank=True, db_index=True, max_length=100)),
+                ("name",
+                 models.CharField(blank=True, db_index=True, max_length=100)),
                 (
                     "subnet",
                     models.CharField(
                         db_index=True,
-                        help_text='Subnet in CIDR notation, eg: "10.0.0.0/24" for IPv4 and "fdb6:21b:a477::9f7/64" for IPv6',
+                        help_text=
+                        'Subnet in CIDR notation, eg: "10.0.0.0/24" for IPv4 and "fdb6:21b:a477::9f7/64" for IPv6',
                         max_length=250,
                         unique=True,
                         verbose_name="Subnet",
@@ -333,16 +341,22 @@ class Migration(migrations.Migration):
                     "broadcast_address",
                     models.GenericIPAddressField(verbose_name="Broadcast IP"),
                 ),
-                ("hostmask", models.GenericIPAddressField(verbose_name="Host Mask")),
-                ("netmask", models.GenericIPAddressField(verbose_name="Net Mask")),
-                ("total_hosts", models.BigIntegerField(verbose_name="Total IPs")),
+                ("hostmask",
+                 models.GenericIPAddressField(verbose_name="Host Mask")),
+                ("netmask",
+                 models.GenericIPAddressField(verbose_name="Net Mask")),
+                ("total_hosts",
+                 models.BigIntegerField(verbose_name="Total IPs")),
                 (
                     "reserved_hosts",
-                    models.BigIntegerField(default=2, verbose_name="Reserved IPs"),
+                    models.BigIntegerField(default=2,
+                                           verbose_name="Reserved IPs"),
                 ),
                 (
                     "utilization_percentage",
-                    models.TextField(blank=True, null=True, verbose_name="Usage (%)"),
+                    models.TextField(blank=True,
+                                     null=True,
+                                     verbose_name="Usage (%)"),
                 ),
                 ("description", models.CharField(blank=True, max_length=100)),
                 (
@@ -396,9 +410,8 @@ class Migration(migrations.Migration):
                 ("name", models.CharField(max_length=30)),
                 (
                     "protocol",
-                    models.CharField(
-                        choices=[("TCP", "TCP"), ("UDP", "UDP")], max_length=20
-                    ),
+                    models.CharField(choices=[("TCP", "TCP"), ("UDP", "UDP")],
+                                     max_length=20),
                 ),
                 (
                     "port",
@@ -444,14 +457,15 @@ class Migration(migrations.Migration):
             model_name="device",
             name="device_type",
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to="ip_manager.DeviceType"
-            ),
+                on_delete=django.db.models.deletion.CASCADE,
+                to="ip_manager.DeviceType"),
         ),
         migrations.AddIndex(
             model_name="subnet",
             index=models.Index(fields=["subnet"], name="subnet_idx"),
         ),
         migrations.AlterUniqueTogether(
-            name="ipaddress", unique_together={("address", "subnet")},
+            name="ipaddress",
+            unique_together={("address", "subnet")},
         ),
     ]

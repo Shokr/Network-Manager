@@ -15,9 +15,10 @@ class Location(models.Model):
     address = models.TextField(blank=True, null=True)
     geolocation = models.CharField(max_length=100, blank=True, null=True)
 
-    time_created = models.DateTimeField(
-        auto_created=True, default=timezone.now, blank=True, null=True
-    )
+    time_created = models.DateTimeField(auto_created=True,
+                                        default=timezone.now,
+                                        blank=True,
+                                        null=True)
 
     class Meta:
         db_table = "Locations"
@@ -37,9 +38,10 @@ class DeviceType(models.Model):
     model_number = models.CharField(max_length=50, blank=True, null=True)
     name = models.CharField(max_length=64)
 
-    time_created = models.DateTimeField(
-        auto_created=True, default=timezone.now, blank=True, null=True
-    )
+    time_created = models.DateTimeField(auto_created=True,
+                                        default=timezone.now,
+                                        blank=True,
+                                        null=True)
 
     class Meta:
         db_table = "device_types"
@@ -56,14 +58,21 @@ class DeviceType(models.Model):
 
 class Device(models.Model):
     name = models.CharField(max_length=64)
-    serial_number = models.CharField(max_length=100, unique=True, blank=True, null=True)
+    serial_number = models.CharField(max_length=100,
+                                     unique=True,
+                                     blank=True,
+                                     null=True)
     mac = models.CharField(max_length=100, unique=True, blank=True, null=True)
 
-    device_type = models.ForeignKey(to="DeviceType", on_delete=models.CASCADE,)
-
-    time_created = models.DateTimeField(
-        auto_created=True, default=timezone.now, blank=True, null=True
+    device_type = models.ForeignKey(
+        to="DeviceType",
+        on_delete=models.CASCADE,
     )
+
+    time_created = models.DateTimeField(auto_created=True,
+                                        default=timezone.now,
+                                        blank=True,
+                                        null=True)
 
     class Meta:
         db_table = "devices"
@@ -87,7 +96,7 @@ class Subnet(models.Model):
         (FAMILY_6, "IPv6"),
     )
 
-    family = models.PositiveSmallIntegerField(choices=CHOICES,)
+    family = models.PositiveSmallIntegerField(choices=CHOICES, )
 
     name = models.CharField(max_length=100, blank=True, db_index=True)
 
@@ -99,15 +108,17 @@ class Subnet(models.Model):
         help_text='Subnet in CIDR notation, eg: "10.0.0.0/24" for IPv4',
     )
 
-    broadcast_address = models.GenericIPAddressField(verbose_name="Broadcast IP")
+    broadcast_address = models.GenericIPAddressField(
+        verbose_name="Broadcast IP")
     hostmask = models.GenericIPAddressField(verbose_name="Host Mask")
     netmask = models.GenericIPAddressField(verbose_name="Net Mask")
 
     total_hosts = models.BigIntegerField(verbose_name="Total IPs")
-    reserved_hosts = models.BigIntegerField(verbose_name="Reserved IPs", default=2)
-    utilization_percentage = models.TextField(
-        verbose_name="Usage (%)", blank=True, null=True
-    )
+    reserved_hosts = models.BigIntegerField(verbose_name="Reserved IPs",
+                                            default=2)
+    utilization_percentage = models.TextField(verbose_name="Usage (%)",
+                                              blank=True,
+                                              null=True)
 
     description = models.CharField(max_length=100, blank=True)
 
@@ -127,13 +138,14 @@ class Subnet(models.Model):
         null=True,
     )
 
-    time_created = models.DateTimeField(
-        auto_created=True, default=timezone.now, blank=True, null=True
-    )
+    time_created = models.DateTimeField(auto_created=True,
+                                        default=timezone.now,
+                                        blank=True,
+                                        null=True)
 
     class Meta:
         db_table = "subnets"
-        ordering = ("-time_created",)
+        ordering = ("-time_created", )
         verbose_name = "Subnet"
         verbose_name_plural = "Subnets"
         indexes = [models.Index(fields=["subnet"], name="subnet_idx")]
@@ -156,8 +168,7 @@ class Subnet(models.Model):
         self.family = ipaddress.ip_network(self.subnet).version
 
         self.broadcast_address = str(
-            ipaddress.ip_network(self.subnet).broadcast_address
-        )
+            ipaddress.ip_network(self.subnet).broadcast_address)
 
         self.hostmask = str(ipaddress.ip_network(self.subnet).hostmask)
         self.netmask = str(ipaddress.ip_network(self.subnet).netmask)
@@ -175,9 +186,9 @@ class IPAddress(models.Model):
         verbose_name="Subnet",
     )
 
-    address = models.GenericIPAddressField(
-        unique=True, verbose_name="IP", help_text="IP address"
-    )
+    address = models.GenericIPAddressField(unique=True,
+                                           verbose_name="IP",
+                                           help_text="IP address")
 
     STATUS_FREE = "free"
     STATUS_ACTIVE = "active"
@@ -256,9 +267,10 @@ class IPAddress(models.Model):
 
     description = models.CharField(max_length=100, blank=True)
 
-    time_created = models.DateTimeField(
-        auto_created=True, default=timezone.now, blank=True, null=True
-    )
+    time_created = models.DateTimeField(auto_created=True,
+                                        default=timezone.now,
+                                        blank=True,
+                                        null=True)
 
     class Meta:
         db_table = "ips"
@@ -277,11 +289,8 @@ class IPAddress(models.Model):
 
         sub = self.subnet
 
-        if (
-            ipaddress.ip_network(self.address).network_address
-            in list(ipaddress.ip_network(sub.subnet).hosts())
-            and self.pk is None
-        ):
+        if (ipaddress.ip_network(self.address).network_address in list(
+                ipaddress.ip_network(sub.subnet).hosts()) and self.pk is None):
             reserved_hosts = sub.reserved_hosts
             sub.reserved_hosts = reserved_hosts + 1
             sub.save()
@@ -289,7 +298,8 @@ class IPAddress(models.Model):
             reserved_hosts_num = sub.reserved_hosts
             total_host = sub.total_hosts
 
-            sub.utilization_percentage = (reserved_hosts_num / total_host) * 100
+            sub.utilization_percentage = (reserved_hosts_num /
+                                          total_host) * 100
             sub.save()
 
             super().save(*args, **kwargs)
@@ -310,7 +320,10 @@ class VLAN(models.Model):
     vid = models.PositiveSmallIntegerField(
         unique=True,
         verbose_name="ID",
-        validators=[MinValueValidator(VLAN_VID_MIN), MaxValueValidator(VLAN_VID_MAX)],
+        validators=[
+            MinValueValidator(VLAN_VID_MIN),
+            MaxValueValidator(VLAN_VID_MAX)
+        ],
     )
 
     STATUS_ACTIVE = "active"
@@ -327,9 +340,10 @@ class VLAN(models.Model):
 
     description = models.CharField(max_length=100, blank=True)
 
-    time_created = models.DateTimeField(
-        auto_created=True, default=timezone.now, blank=True, null=True
-    )
+    time_created = models.DateTimeField(auto_created=True,
+                                        default=timezone.now,
+                                        blank=True,
+                                        null=True)
 
     class Meta:
         db_table = "vlans"
@@ -366,15 +380,17 @@ class Service(models.Model):
         verbose_name="Port number",
     )
 
-    ip_addresses = models.ManyToManyField(
-        to="IPAddress", related_name="services", blank=True, verbose_name="IP addresses"
-    )
+    ip_addresses = models.ManyToManyField(to="IPAddress",
+                                          related_name="services",
+                                          blank=True,
+                                          verbose_name="IP addresses")
 
     description = models.CharField(max_length=100, blank=True)
 
-    time_created = models.DateTimeField(
-        auto_created=True, default=timezone.now, blank=True, null=True
-    )
+    time_created = models.DateTimeField(auto_created=True,
+                                        default=timezone.now,
+                                        blank=True,
+                                        null=True)
 
     class Meta:
         db_table = "services"

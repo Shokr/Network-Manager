@@ -13,9 +13,9 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="ipaddress",
             name="address",
-            field=models.GenericIPAddressField(
-                help_text="IP address", unique=True, verbose_name="IP"
-            ),
+            field=models.GenericIPAddressField(help_text="IP address",
+                                               unique=True,
+                                               verbose_name="IP"),
         ),
         migrations.AlterField(
             model_name="ipaddress",
@@ -60,7 +60,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="subnet",
             name="family",
-            field=models.PositiveSmallIntegerField(choices=[(4, "IPv4"), (6, "IPv6")]),
+            field=models.PositiveSmallIntegerField(
+                choices=[(4, "IPv4"), (6, "IPv6")]),
         ),
-        migrations.AlterUniqueTogether(name="ipaddress", unique_together=set(),),
+        migrations.AlterUniqueTogether(
+            name="ipaddress",
+            unique_together=set(),
+        ),
     ]

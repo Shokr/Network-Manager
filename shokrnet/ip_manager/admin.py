@@ -16,7 +16,7 @@ class LocationAdmin(ImportExportModelAdmin):
         "geolocation",
     )
 
-    readonly_fields = ("time_created",)
+    readonly_fields = ("time_created", )
 
 
 @admin.register(DeviceType)
@@ -31,7 +31,7 @@ class DeviceTypeAdmin(ImportExportModelAdmin):
         "manufacturer",
     )
 
-    readonly_fields = ("time_created",)
+    readonly_fields = ("time_created", )
 
 
 @admin.register(Device)
@@ -46,7 +46,7 @@ class DeviceAdmin(ImportExportModelAdmin):
         "device_type",
     )
 
-    readonly_fields = ("time_created",)
+    readonly_fields = ("time_created", )
 
 
 @admin.register(Subnet)
@@ -93,7 +93,7 @@ class IPAddressAdmin(ImportExportModelAdmin):
         "dns_name",
     )
 
-    readonly_fields = ("time_created",)
+    readonly_fields = ("time_created", )
 
     # def save_model(self, request, obj, form, change):
     #     if obj.address not in list(ipaddress.ip_network(obj.subnet.subnet).hosts()):
@@ -114,16 +114,16 @@ class VLANAdmin(ImportExportModelAdmin):
         "status",
     )
 
-    readonly_fields = ("time_created",)
+    readonly_fields = ("time_created", )
 
 
 @admin.register(Service)
 class ServiceAdmin(ImportExportModelAdmin):
     form = ServiceForm
 
-    search_fields = ("name",)
+    search_fields = ("name", )
 
-    readonly_fields = ("time_created",)
+    readonly_fields = ("time_created", )
 
 
 # admin.site.register(Service)
