@@ -24,7 +24,8 @@ class TestUserUpdateView:
 
         view.request = request
 
-        assert view.get_success_url() == f"/users/{user.username}/"
+        if view.get_success_url() != f"/users/{user.username}/":
+            raise AssertionError
 
     @staticmethod
     def test_get_object(user: User, rf: RequestFactory):
@@ -34,7 +35,8 @@ class TestUserUpdateView:
 
         view.request = request
 
-        assert view.get_object() == user
+        if view.get_object() != user:
+            raise AssertionError
 
 
 class TestUserRedirectView:
@@ -46,4 +48,5 @@ class TestUserRedirectView:
 
         view.request = request
 
-        assert view.get_redirect_url() == f"/users/{user.username}/"
+        if view.get_redirect_url() != f"/users/{user.username}/":
+            raise AssertionError

@@ -20,8 +20,10 @@ class TestUserCreationForm:
             }
         )
 
-        assert form.is_valid()
-        assert form.clean_username() == proto_user.username
+        if not form.is_valid():
+            raise AssertionError
+        if form.clean_username() != proto_user.username:
+            raise AssertionError
 
         # Creating a user.
         form.save()
@@ -36,6 +38,9 @@ class TestUserCreationForm:
             }
         )
 
-        assert not form.is_valid()
-        assert len(form.errors) == 1
-        assert "username" in form.errors
+        if form.is_valid():
+            raise AssertionError
+        if len(form.errors) != 1:
+            raise AssertionError
+        if "username" not in form.errors:
+            raise AssertionError

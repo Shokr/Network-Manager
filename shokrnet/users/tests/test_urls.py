@@ -7,18 +7,23 @@ pytestmark = pytest.mark.django_db
 
 
 def test_detail(user: User):
-    assert (
-        reverse("users:detail", kwargs={"username": user.username})
-        == f"/users/{user.username}/"
-    )
-    assert resolve(f"/users/{user.username}/").view_name == "users:detail"
+    if (
+        reverse("users:detail", kwargs={"username": user.username}) != f"/users/{user.username}/"
+    ):
+        raise AssertionError
+    if resolve(f"/users/{user.username}/").view_name != "users:detail":
+        raise AssertionError
 
 
 def test_update():
-    assert reverse("users:update") == "/users/~update/"
-    assert resolve("/users/~update/").view_name == "users:update"
+    if reverse("users:update") != "/users/~update/":
+        raise AssertionError
+    if resolve("/users/~update/").view_name != "users:update":
+        raise AssertionError
 
 
 def test_redirect():
-    assert reverse("users:redirect") == "/users/~redirect/"
-    assert resolve("/users/~redirect/").view_name == "users:redirect"
+    if reverse("users:redirect") != "/users/~redirect/":
+        raise AssertionError
+    if resolve("/users/~redirect/").view_name != "users:redirect":
+        raise AssertionError
