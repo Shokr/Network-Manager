@@ -2,22 +2,22 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 
 from shokrnet.ip_manager.models import (
-    Location,
+    VLAN,
     Device,
     DeviceType,
-    Subnet,
     IPAddress,
-    VLAN,
+    Location,
     Service,
+    Subnet,
 )
 from shokrnet.ip_manager.serializers import (
-    LocationSerializer,
     DeviceSerializer,
     DeviceTypeSerializer,
-    SubnetSerializer,
     IPSerializer,
-    VLANSerializer,
+    LocationSerializer,
     ServiceSerializer,
+    SubnetSerializer,
+    VLANSerializer,
 )
 
 
