@@ -1,6 +1,5 @@
 from django.contrib.auth import get_user_model
 from rest_framework import status
-from rest_framework.decorators import action
 from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, UpdateModelMixin
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
@@ -18,7 +17,7 @@ class UserViewSet(RetrieveModelMixin, ListModelMixin, UpdateModelMixin, GenericV
     def get_queryset(self, *args, **kwargs):
         return self.queryset.filter(id=self.request.user.id)
 
-    @action(detail=False, methods=["GET"])
+    # @action(detail=False, methods=["GET"])
     @staticmethod
     def me(request):
         serializer = UserSerializer(request.user, context={"request": request})
