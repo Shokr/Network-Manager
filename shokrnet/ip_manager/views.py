@@ -19,10 +19,20 @@ def home(request):
 
     user = request.user
 
-    return render(request, 'ip_manager/home',
-                  {'user': user, 'location': location, 'subnet': subnet, 'ip': ip,
-                   'service': service, 'device': device,
-                   'device_type': deviceType, 'vlan': vlan})
+    return render(
+        request,
+        "ip_manager/home",
+        {
+            "user": user,
+            "location": location,
+            "subnet": subnet,
+            "ip": ip,
+            "service": service,
+            "device": device,
+            "device_type": deviceType,
+            "vlan": vlan,
+        },
+    )
 
 
 # IP
@@ -30,15 +40,33 @@ def home(request):
 
 class IPCreate(CreateView):
     model = IPAddress
-    fields = ['subnet', 'address', 'status', 'role', 'device', 'nat_inside', 'dns_name', 'description']
+    fields = [
+        "subnet",
+        "address",
+        "status",
+        "role",
+        "device",
+        "nat_inside",
+        "dns_name",
+        "description",
+    ]
 
     def get_success_url(self):
-        return reverse('ip_manager:list_ip')
+        return reverse("ip_manager:list_ip")
 
 
 class IPUpdate(UpdateView):
     model = IPAddress
-    fields = ['subnet', 'address', 'status', 'role', 'device', 'nat_inside', 'dns_name', 'description']
+    fields = [
+        "subnet",
+        "address",
+        "status",
+        "role",
+        "device",
+        "nat_inside",
+        "dns_name",
+        "description",
+    ]
 
 
 class IPDetailView(DetailView):
@@ -56,22 +84,25 @@ def delete_ip(request, pk):
     subnet = ip.subnet.pk
     reserved_hosts = Subnet.objects.get(pk=subnet).reserved_hosts
     total_hosts = Subnet.objects.get(pk=subnet).total_hosts
-    Subnet.objects.filter(pk=subnet).update(reserved_hosts=reserved_hosts - 1,
-                                            utilization_percentage=(reserved_hosts / total_hosts) * 100)
+    Subnet.objects.filter(pk=subnet).update(
+        reserved_hosts=reserved_hosts - 1,
+        utilization_percentage=(reserved_hosts / total_hosts) * 100,
+    )
     ip.delete()
-    return redirect('ip_manager:list_ip')
+    return redirect("ip_manager:list_ip")
 
 
 # Subnet
 
+
 class SubnetCreate(CreateView):
     model = Subnet
-    fields = ['name', 'subnet', 'description', 'master_subnet', 'vlan']
+    fields = ["name", "subnet", "description", "master_subnet", "vlan"]
 
 
 class SubnetUpdate(UpdateView):
     model = Subnet
-    fields = ['name', 'subnet', 'description', 'master_subnet', 'vlan']
+    fields = ["name", "subnet", "description", "master_subnet", "vlan"]
 
 
 class SubnetDetailView(DetailView):
@@ -86,19 +117,20 @@ class SubnetListView(ListView):
 def delete_subnet(request, pk):
     subnet = get_object_or_404(Subnet, pk=pk)
     subnet.delete()
-    return redirect('ip_manager:list_subnet')
+    return redirect("ip_manager:list_subnet")
 
 
 # VLAN
 
+
 class VLANCreate(CreateView):
     model = VLAN
-    fields = ['name', 'location', 'vid', 'status', 'description']
+    fields = ["name", "location", "vid", "status", "description"]
 
 
 class VLANUpdate(UpdateView):
     model = VLAN
-    fields = ['name', 'location', 'vid', 'status', 'description']
+    fields = ["name", "location", "vid", "status", "description"]
 
 
 class VLANDetailView(DetailView):
@@ -113,19 +145,20 @@ class VLANListView(ListView):
 def delete_VLAN(request, pk):
     vlan = get_object_or_404(VLAN, pk=pk)
     vlan.delete()
-    return redirect('ip_manager:list_vlan')
+    return redirect("ip_manager:list_vlan")
 
 
 # Service
 
+
 class ServiceCreate(CreateView):
     model = Service
-    fields = ['name', 'protocol', 'ip_addresses', 'port', 'description']
+    fields = ["name", "protocol", "ip_addresses", "port", "description"]
 
 
 class ServiceUpdate(UpdateView):
     model = Service
-    fields = ['name', 'protocol', 'ip_addresses', 'port', 'description']
+    fields = ["name", "protocol", "ip_addresses", "port", "description"]
 
 
 class ServiceDetailView(DetailView):
@@ -140,19 +173,20 @@ class ServiceListView(ListView):
 def delete_Service(request, pk):
     service = get_object_or_404(Service, pk=pk)
     service.delete()
-    return redirect('ip_manager:list_service')
+    return redirect("ip_manager:list_service")
 
 
 # Device
 
+
 class DeviceCreate(CreateView):
     model = Device
-    fields = ['name', 'serial_number', 'mac', 'device_type']
+    fields = ["name", "serial_number", "mac", "device_type"]
 
 
 class DeviceUpdate(UpdateView):
     model = Device
-    fields = ['name', 'serial_number', 'mac', 'device_type']
+    fields = ["name", "serial_number", "mac", "device_type"]
 
 
 class DeviceDetailView(DetailView):
@@ -167,19 +201,20 @@ class DeviceListView(ListView):
 def delete_Device(request, pk):
     device = get_object_or_404(Device, pk=pk)
     device.delete()
-    return redirect('ip_manager:list_device')
+    return redirect("ip_manager:list_device")
 
 
 # Device Type
 
+
 class DeviceTypeCreate(CreateView):
     model = DeviceType
-    fields = ['manufacturer', 'model_number', 'name']
+    fields = ["manufacturer", "model_number", "name"]
 
 
 class DeviceTypeUpdate(UpdateView):
     model = DeviceType
-    fields = ['manufacturer', 'model_number', 'name']
+    fields = ["manufacturer", "model_number", "name"]
 
 
 class DeviceTypeDetailView(DetailView):
@@ -194,19 +229,20 @@ class DeviceTypeListView(ListView):
 def delete_DeviceType(request, pk):
     device_type = get_object_or_404(DeviceType, pk=pk)
     device_type.delete()
-    return redirect('ip_manager:list_device_type')
+    return redirect("ip_manager:list_device_type")
 
 
 # Location
 
+
 class LocationCreate(CreateView):
     model = Location
-    fields = ['name', 'geolocation', 'address']
+    fields = ["name", "geolocation", "address"]
 
 
 class LocationUpdate(UpdateView):
     model = Location
-    fields = ['name', 'geolocation', 'address']
+    fields = ["name", "geolocation", "address"]
 
 
 class LocationDetailView(DetailView):
@@ -221,18 +257,23 @@ class LocationListView(ListView):
 def delete_Location(request, pk):
     location = get_object_or_404(Location, pk=pk)
     location.delete()
-    return redirect('ip_manager:list_location')
+    return redirect("ip_manager:list_location")
 
 
 @login_required
 def subnet_ips(request, pk):
     subnet = get_object_or_404(Subnet, pk=pk)
-    used_ips = IPAddress.objects.filter(subnet=subnet).values_list('address', flat=True)
+    used_ips = IPAddress.objects.filter(subnet=subnet).values_list("address", flat=True)
     ip_list = list(ipaddress.ip_network(subnet.subnet).hosts())
     free_ips = list(set(ip_list) - set(used_ips))
 
-    return render(request, 'ip_manager/subnet_ip_list.html', {'subnet': subnet, 'usedIPS': used_ips,
-                                                              'freeIPS': free_ips})
+    return render(
+        request,
+        "ip_manager/subnet_ip_list.html",
+        {"subnet": subnet, "usedIPS": used_ips, "freeIPS": free_ips},
+    )
+
+
 #######################################################################################################################
 #
 

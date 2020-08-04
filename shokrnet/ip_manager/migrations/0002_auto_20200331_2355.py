@@ -6,43 +6,61 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('ip_manager', '0001_initial'),
+        ("ip_manager", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='ipaddress',
-            name='address',
-            field=models.GenericIPAddressField(help_text='IP address', unique=True, verbose_name='IP'),
+            model_name="ipaddress",
+            name="address",
+            field=models.GenericIPAddressField(
+                help_text="IP address", unique=True, verbose_name="IP"
+            ),
         ),
         migrations.AlterField(
-            model_name='ipaddress',
-            name='device',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE,
-                                    related_name='ip_addresses', to='ip_manager.Device', unique=True),
+            model_name="ipaddress",
+            name="device",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="ip_addresses",
+                to="ip_manager.Device",
+                unique=True,
+            ),
         ),
         migrations.AlterField(
-            model_name='ipaddress',
-            name='status',
+            model_name="ipaddress",
+            name="status",
             field=models.CharField(
-                choices=[('free', 'FREE'), ('active', 'Active'), ('reserved', 'Reserved'), ('deprecated', 'Deprecated'),
-                         ('dhcp', 'DHCP')], default='active', help_text='The operational status of this IP',
-                max_length=50),
+                choices=[
+                    ("free", "FREE"),
+                    ("active", "Active"),
+                    ("reserved", "Reserved"),
+                    ("deprecated", "Deprecated"),
+                    ("dhcp", "DHCP"),
+                ],
+                default="active",
+                help_text="The operational status of this IP",
+                max_length=50,
+            ),
         ),
         migrations.AlterField(
-            model_name='ipaddress',
-            name='subnet',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.PROTECT, related_name='ip_addresses',
-                                    to='ip_manager.Subnet', verbose_name='Subnet'),
+            model_name="ipaddress",
+            name="subnet",
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.PROTECT,
+                related_name="ip_addresses",
+                to="ip_manager.Subnet",
+                verbose_name="Subnet",
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='subnet',
-            name='family',
-            field=models.PositiveSmallIntegerField(choices=[(4, 'IPv4'), (6, 'IPv6')]),
+            model_name="subnet",
+            name="family",
+            field=models.PositiveSmallIntegerField(choices=[(4, "IPv4"), (6, "IPv6")]),
         ),
-        migrations.AlterUniqueTogether(
-            name='ipaddress',
-            unique_together=set(),
-        ),
+        migrations.AlterUniqueTogether(name="ipaddress", unique_together=set(),),
     ]

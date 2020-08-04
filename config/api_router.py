@@ -1,8 +1,15 @@
 from django.conf import settings
 from rest_framework.routers import DefaultRouter, SimpleRouter
 
-from shokrnet.ip_manager.viewsets import LocationViewSet, DeviceTypeViewSet, DeviceViewSet, SubnetViewSet, IPViewSet, \
-    VLANViewSet, ServiceViewSet
+from shokrnet.ip_manager.viewsets import (
+    LocationViewSet,
+    DeviceTypeViewSet,
+    DeviceViewSet,
+    SubnetViewSet,
+    IPViewSet,
+    VLANViewSet,
+    ServiceViewSet,
+)
 from shokrnet.users.api.views import UserViewSet
 
 if settings.DEBUG:
