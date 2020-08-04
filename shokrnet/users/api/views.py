@@ -17,8 +17,8 @@ class UserViewSet(RetrieveModelMixin, ListModelMixin, UpdateModelMixin, GenericV
     def get_queryset(self, *args, **kwargs):
         return self.queryset.filter(id=self.request.user.id)
 
-    # @action(detail=False, methods=["GET"])
-    # @staticmethod
-    def me(request):
+    
+    @action(detail=False, methods=["GET"])
+    def me(self, request):
         serializer = UserSerializer(request.user, context={"request": request})
         return Response(status=status.HTTP_200_OK, data=serializer.data)
