@@ -5,7 +5,8 @@ from ..models import *
 
 class TestIPAddress(TestCase):
 
-    def test_ips(self):
+    @staticmethod
+    def test_ips():
         ips = IPAddress.objects.bulk_create((
             IPAddress(family=4, address='192.0.2.1/24'),
             IPAddress(family=4, address='192.0.2.2/24'),
@@ -15,7 +16,8 @@ class TestIPAddress(TestCase):
 
 class TestVLAN(TestCase):
 
-    def test_get_next_available_vid(self):
+    @staticmethod
+    def test_get_next_available_vid():
         vlan = VLAN.objects.create(name='VLAN', vid=10)
         VLAN.objects.bulk_create((
             VLAN(name='VLAN 1', vid=1),
