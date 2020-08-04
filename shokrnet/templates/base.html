@@ -149,6 +149,20 @@
   </script>
 
 {% endblock javascript %}
+
+
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+
+
+<script src="{% static 'vendors/cursor-effects/src/fairyDustCursor.js' %}"></script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    new fairyDustCursor();
+  });
+</script>
+
 </body>
 </html>
 
